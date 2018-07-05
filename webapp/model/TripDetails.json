@@ -1,0 +1,29 @@
+{
+	"title": "OSCON",
+	"parts": [
+		{
+			"from": {
+				"city": "Frankfurt",
+				"code": "FRA",
+				"date": "07/15/2018 08:00"
+			},
+			"to": {
+				"city": "Amsterdam",
+				"code": "AMS",
+				"date": "07/15/2018 08:00"
+			}
+		},
+		{
+			"from": {
+				"city": "Amsterdam",
+				"code": "AMS",
+				"date": "07/15/2018 08:00"
+			},
+			"to": {
+				"city": "Portland",
+				"code": "PDX",
+				"date": "07/15/2018 08:00"
+			}
+		}
+	]
+}
