@@ -1,29 +1,66 @@
 {
+	"icon": "flight",
 	"title": "OSCON",
-	"parts": [
-		{
-			"from": {
-				"city": "Frankfurt",
-				"code": "FRA",
-				"date": "07/15/2018 08:00"
+	"beginDate": "07/15/2018",
+	"destinationTime1": "07/21/2018",
+	"plan": {
+		"outward": [
+			{
+				"departure": {
+					"city": "Frankfurt",
+					"country": "DE",
+					"code": "FRA",
+					"date": "07/15/2018 08:00"
+				},
+				"destination": {
+					"city": "Amsterdam",
+					"country": "DE",
+					"code": "AMS",
+					"date": "07/15/2018 09:00"
+				}
 			},
-			"to": {
-				"city": "Amsterdam",
-				"code": "AMS",
-				"date": "07/15/2018 08:00"
+			{
+				"departure": {
+					"city": "Amsterdam",
+					"code": "AMS",
+					"date": "07/15/2018 10:00"
+				},
+				"destination": {
+					"city": "Portland",
+					"country": "US",
+					"code": "PDX",
+					"date": "07/15/2018 14:00"
+				}
 			}
-		},
-		{
-			"from": {
-				"city": "Amsterdam",
-				"code": "AMS",
-				"date": "07/15/2018 08:00"
+		],
+		"return": [
+			{
+				"departure": {
+					"city": "Frankfurt",
+					"country": "DE",
+					"code": "FRA",
+					"date": "07/15/2018 08:00"
+				},
+				"destination": {
+					"city": "Amsterdam",
+					"country": "DE",
+					"code": "AMS",
+					"date": "07/15/2018 08:00"
+				}
 			},
-			"to": {
-				"city": "Portland",
-				"code": "PDX",
-				"date": "07/15/2018 08:00"
+			{
+				"departure": {
+					"city": "Amsterdam",
+					"code": "AMS",
+					"date": "07/15/2018 08:00"
+				},
+				"destination": {
+					"city": "Portland",
+					"country": "US",
+					"code": "PDX",
+					"date": "07/15/2018 08:00"
+				}
 			}
-		}
-	]
+		]
+	}
 }

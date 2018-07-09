@@ -41,22 +41,5 @@
 			<awc:VariantButton text="{i18n>uiDensityButtonText}" icon="sap-icon://credit-card" />
 		</semantic:content>
 
-		<!-- Actions -->
-		<semantic:closeAction>
-			<semantic:CloseAction press="onCloseExamplePress"/>
-		</semantic:closeAction>
-
-		<semantic:fullScreenAction>
-			<semantic:FullScreenAction
-				visible="{=!${appView>/actionButtonsInfo/midColumn/fullScreenMode}}"
-				press="onFullScreenPress"/>
-		</semantic:fullScreenAction>
-
-		<semantic:exitFullScreenAction>
-			<semantic:ExitFullScreenAction
-				press="onExitFullScreenPress"
-				visible="{=${appView>/actionButtonsInfo/midColumn/fullScreenMode}}"/>
-		</semantic:exitFullScreenAction>
-
 	</semantic:SemanticPage>
 </mvc:View>

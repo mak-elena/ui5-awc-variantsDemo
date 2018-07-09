@@ -101,11 +101,8 @@ sap.ui.define([
 
 			_initTripDetailsModel: function () {
 				var oTripsModel = new JSONModel(jQuery.sap.getModulePath("ui5/awc/demo", "/model/TripDetails.json"));
-				//this.setModel(oProductsModel, "products");
 				this.setModel(oTripsModel, "tripDetails");
 			}
-
 		});
-
 	}
 );

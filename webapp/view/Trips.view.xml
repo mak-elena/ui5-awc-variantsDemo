@@ -25,22 +25,39 @@
 		</semantic:titleSnappedContent>
 
 		<semantic:headerContent>
-			<RangeSlider showAdvancedTooltip="true" enableTickmarks="true" min="1" max="31"/>
+			<Slider showAdvancedTooltip="true" enableTickmarks="true" min="-30" max="0" value="{appView>/daysLeft}" change="onDaysLeftChange"/>
 		</semantic:headerContent>
 
 		<!-- Content -->
 		<semantic:content>
 			<VBox>
-				<Text text="{tripDetails>title}" level="H3" class="ui5-awc__title"/>
-			<awc:TripDetails details="{tripDetails>/parts}" />
-			<List id="tripsList" items="{trips>/}" class="sapUiMediumMargin sapUiContentPadding">
+				<Panel  class="ui5_awc_trip">
+					<HBox>
+						<core:Icon src="sap-icon://{tripDetails>/icon}" class="ui5_awc_trip__icon" />
+						<VBox>
+							<Text text="{tripDetails>/title}" class="ui5_awc_trip__title"/>
+							<Text text="{tripDetails>/beginDate} - {tripDetails>/destinationTime1}"  class="ui5_awc_trip__dates" />
+						</VBox>
+					</HBox>
+
+					<awc:TripDetails details="{tripDetails>/plan}" />
+				</Panel>
+
+			<List id="tripsList" items="{trips>/}" class="">
 				<items>
 					<CustomListItem class="ui5-awc__tripsItem" >
 						<core:Icon src="sap-icon://{trips>icon}" />
-						<Text text="{trips>title}" level="H3" class="ui5-awc__title"/>
+						<Text text="{trips>title}" class="ui5-awc__title"/>
 						<Text
 							text="{
-								path: 'trips>startDate',
+								path: 'trips>departureTime0',
+								formatter: '.formatter.dateFormat'
+								}"/>
+						<Text
+							text=" - "/>
+						<Text
+							text="{
+								path: 'trips>departureTime0',
 								formatter: '.formatter.dateFormat'
 								}"/>
 					</CustomListItem>
@@ -48,23 +65,5 @@
 			</List>
 			</VBox>
 		</semantic:content>
-
-		<!-- Actions -->
-		<semantic:closeAction>
-			<semantic:CloseAction press="onCloseExamplePress"/>
-		</semantic:closeAction>
-
-		<semantic:fullScreenAction>
-			<semantic:FullScreenAction
-				visible="{=!${appView>/actionButtonsInfo/midColumn/fullScreenMode}}"
-				press="onFullScreenPress"/>
-		</semantic:fullScreenAction>
-
-		<semantic:exitFullScreenAction>
-			<semantic:ExitFullScreenAction
-				press="onExitFullScreenPress"
-				visible="{=${appView>/actionButtonsInfo/midColumn/fullScreenMode}}"/>
-		</semantic:exitFullScreenAction>
-
 	</semantic:SemanticPage>
 </mvc:View>

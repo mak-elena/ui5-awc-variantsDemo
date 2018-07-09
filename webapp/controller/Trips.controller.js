@@ -22,19 +22,18 @@ sap.ui.define([
 			/* =========================================================== */
 			/* event handlers                                              */
 			/* =========================================================== */
-			onFullScreenPress: function () {
-				this.getModel("appView").setProperty("/actionButtonsInfo/midColumn/fullScreenMode", true);
-				this.getModel("appView").setProperty("/layout", "MidColumnFullScreen");
-			},
+			onDaysLeftChange: function (oEvent) {
+				var fValue = -oEvent.getParameter("value");
+				if(fValue <= 1) {
+					AwcProfileStore.updateProfile({"details": "full"});
+				}
+				else if(fValue < 10) {
+					AwcProfileStore.updateProfile({"details": "mid"});
+				}
+				else {
+					AwcProfileStore.updateProfile({"details": "short"});
+				}
 
-			onExitFullScreenPress: function () {
-				this.getModel("appView").setProperty("/layout", "TwoColumnsMidExpanded");
-				this.getModel("appView").setProperty("/actionButtonsInfo/midColumn/fullScreenMode", false);
-			},
-
-			onCloseExamplePress: function () {
-				this.getModel("appView").setProperty("/actionButtonsInfo/midColumn/fullScreenMode", false);
-				this.getRouter().navTo("master");
 			},
 
 			/* =========================================================== */

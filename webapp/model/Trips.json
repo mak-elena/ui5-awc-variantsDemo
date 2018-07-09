@@ -2,13 +2,13 @@
 	{
 		"title": "conference 1",
 		"icon": "flight",
-		"startDate": "07/15/2018",
-		"endDay": 5
+		"departureTime0": "07/15/2018",
+		"destinationTime1": "07/22/2018"
 	},
 	{
 		"icon": "passenger-train",
 		"title": "conference 2",
-		"startDate": "07/20/2018",
-		"endDay": 17
+		"departureTime0": "07/20/2018",
+		"destinationTime1": "09/29/2018"
 	}
 ]

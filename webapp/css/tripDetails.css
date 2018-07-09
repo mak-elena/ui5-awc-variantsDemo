@@ -1,0 +1,16 @@
+.ui5_awc_trip__icon {
+	font-size: 3rem;
+	color: #3f5161;
+}
+
+.ui5_awc_trip__title {
+	font-size: 1.75rem;
+	padding-left: 1rem;
+	color: #3f5161;
+}
+.ui5_awc_trip__dates {
+	padding-left: 1rem;
+	font-weight: bolder;
+	font-size: 1rem;
+	color: #3f5161;
+}
