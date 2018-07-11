@@ -2,7 +2,6 @@
 	controllerName="ui5.awc.demo.controller.Trips"
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc"
-	xmlns:u="sap.ui.unified"
 	xmlns:core="sap.ui.core"
 	xmlns:semantic="sap.f.semantic"
 	xmlns:awc="ui5.awc">
@@ -26,33 +25,10 @@
 		</semantic:titleSnappedContent>
 
 		<semantic:headerContent>
-			<!--<Slider showAdvancedTooltip="true" enableTickmarks="true" min="-30" max="0" value="{appView>/daysLeft}" change="onDaysLeftChange"/>-->
-			<u:CalendarDateInterval
-				id="calendar"
-				days="14"
+			<DatePicker
+				id="datePicker"
 				width="100%"
-				showDayNamesLine="false"
-				select="onDateSelected"
-				showWeekNumbers="false" >
-				<!--<u:selectedDates>
-					<u:DateRange
-						startDate="{
-					path: '{tripDetails>/beginDate}',
-					formatter: '.formatter.stringToDate'
-					}" endDate="{
-					path: '{tripDetails>/beginDate}',
-					formatter: '.formatter.stringToDate'
-					}" />
-				</u:selectedDates>
-				<u:specialDates>
-					<u:DateTypeRange
-						startDate="{
-					path: '{tripDetails>/beginDate}',
-					formatter: '.formatter.stringToDate'
-					}"
-					type="Type01"/>
-				</u:specialDates>-->
-			</u:CalendarDateInterval>
+				change="onDateChanged"/>
 		</semantic:headerContent>
 
 		<!-- Content -->
