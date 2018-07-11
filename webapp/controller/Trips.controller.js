@@ -29,17 +29,8 @@ sap.ui.define([
 					oSelectedDate = new Date(oValue),
 					oTripDate = this._getTripDate();
 
-				var iDiffDays = formatter.getDateDiffDays(oSelectedDate,oTripDate)
-
-				if(iDiffDays <= 1) {
-					AwcProfileStore.updateProfile({"details": "full"});
-				}
-				else if(iDiffDays < 10) {
-					AwcProfileStore.updateProfile({"details": "mid"});
-				}
-				else {
-					AwcProfileStore.updateProfile({"details": "short"});
-				}
+				var iDiffDays = formatter.getDateDiffDays(oSelectedDate,oTripDate);
+				AwcProfileStore.updateProfile({"daysLeft": iDiffDays});
 			},
 
 			/* =========================================================== */

@@ -208,7 +208,7 @@ sap.ui.define([],
 			}
 
 			static matches(context) {
-				return context['details'] == 'short';
+				return context['daysLeft'] >= 7;
 			}
 
 			connectedCallback() {
@@ -262,7 +262,7 @@ sap.ui.define([],
 			}
 
 			static matches(context) {
-				return context['details'] == 'mid';
+				return context['daysLeft'] > 1 && context['daysLeft'] < 7;
 			}
 
 
@@ -342,7 +342,7 @@ sap.ui.define([],
 				}
 
 			static matches(context) {
-				return context['details'] == 'full';
+				return context['daysLeft'] <= 1;
 			}
 
 			get template() {
