@@ -9,7 +9,7 @@
 		<core:Icon src="sap-icon://flight" />
 		<Text text="{$this>title}" class="ui5-awc-productItem__name"/>
 		<Text text="{
-				path: '$this>departureTime0',
+				path: '$this>out_departureTime0',
 				type: 'sap.ui.model.type.DateTime',
 				formatOptions: {
 					style: 'short'

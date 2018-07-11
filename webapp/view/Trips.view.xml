@@ -2,6 +2,7 @@
 	controllerName="ui5.awc.demo.controller.Trips"
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:u="sap.ui.unified"
 	xmlns:core="sap.ui.core"
 	xmlns:semantic="sap.f.semantic"
 	xmlns:awc="ui5.awc">
@@ -25,7 +26,33 @@
 		</semantic:titleSnappedContent>
 
 		<semantic:headerContent>
-			<Slider showAdvancedTooltip="true" enableTickmarks="true" min="-30" max="0" value="{appView>/daysLeft}" change="onDaysLeftChange"/>
+			<!--<Slider showAdvancedTooltip="true" enableTickmarks="true" min="-30" max="0" value="{appView>/daysLeft}" change="onDaysLeftChange"/>-->
+			<u:CalendarDateInterval
+				id="calendar"
+				days="14"
+				width="100%"
+				showDayNamesLine="false"
+				select="onDateSelected"
+				showWeekNumbers="false" >
+				<!--<u:selectedDates>
+					<u:DateRange
+						startDate="{
+					path: '{tripDetails>/beginDate}',
+					formatter: '.formatter.stringToDate'
+					}" endDate="{
+					path: '{tripDetails>/beginDate}',
+					formatter: '.formatter.stringToDate'
+					}" />
+				</u:selectedDates>
+				<u:specialDates>
+					<u:DateTypeRange
+						startDate="{
+					path: '{tripDetails>/beginDate}',
+					formatter: '.formatter.stringToDate'
+					}"
+					type="Type01"/>
+				</u:specialDates>-->
+			</u:CalendarDateInterval>
 		</semantic:headerContent>
 
 		<!-- Content -->
@@ -36,7 +63,7 @@
 						<core:Icon src="sap-icon://{tripDetails>/icon}" class="ui5_awc_trip__icon" />
 						<VBox>
 							<Text text="{tripDetails>/title}" class="ui5_awc_trip__title"/>
-							<Text text="{tripDetails>/beginDate} - {tripDetails>/destinationTime1}"  class="ui5_awc_trip__dates" />
+							<Text text="{tripDetails>/beginDate} - {tripDetails>/out_destinationTime1}"  class="ui5_awc_trip__dates" />
 						</VBox>
 					</HBox>
 
@@ -50,14 +77,14 @@
 						<Text text="{trips>title}" class="ui5-awc__title"/>
 						<Text
 							text="{
-								path: 'trips>departureTime0',
+								path: 'trips>out_departureTime0',
 								formatter: '.formatter.dateFormat'
 								}"/>
 						<Text
 							text=" - "/>
 						<Text
 							text="{
-								path: 'trips>departureTime0',
+								path: 'trips>out_departureTime0',
 								formatter: '.formatter.dateFormat'
 								}"/>
 					</CustomListItem>
