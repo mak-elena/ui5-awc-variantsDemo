@@ -17,7 +17,7 @@ sap.ui.define([
 
 			onInit : function () {
 				this._setInitialDate();
-				this.getRouter().getRoute("uiStructure").attachPatternMatched(this._onObjectMatched, this);
+				this.getRouter().getRoute("trips").attachPatternMatched(this._onObjectMatched, this);
 			},
 
 			/* =========================================================== */

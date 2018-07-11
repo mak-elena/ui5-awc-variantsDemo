@@ -104,11 +104,6 @@
 					"pattern": "",
 					"name": "trips",
 					"target": "trips"
-				},
-				{
-					"pattern": "uiStructure",
-					"name": "uiStructure",
-					"target": "uiStructure"
 				}
 			],
 
@@ -116,11 +111,6 @@
 				"trips": {
 					"viewName": "Trips",
 					"viewId": "trips",
-					"viewLevel": 1
-				},
-				"uiStructure": {
-					"viewName": "UiStructure",
-					"viewId": "uiStructure",
 					"viewLevel": 1
 				}
 			}

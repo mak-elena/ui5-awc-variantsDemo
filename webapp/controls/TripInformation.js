@@ -6,7 +6,7 @@ sap.ui.define([
 	function (Control) {
 		"use strict";
 
-		return Control.extend("sap.dig.TripDetails", {
+		return Control.extend("ui5.awc.TripInformation", {
 			metadata: {
 				properties: {
 					details: {
@@ -19,7 +19,6 @@ sap.ui.define([
 			},
 
 			init: function () {
-				// init CSS
 			},
 
 			renderer: function (oRM, oControl) {
