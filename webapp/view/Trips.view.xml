@@ -39,7 +39,7 @@
 						<core:Icon src="sap-icon://{tripDetails>/icon}" class="ui5_awc_trip__icon" />
 						<VBox>
 							<Text text="{tripDetails>/title}" class="ui5_awc_trip__title"/>
-							<Text text="{tripDetails>/beginDate} - {tripDetails>/out_destinationTime1}"  class="ui5_awc_trip__dates" />
+							<Text text="{tripDetails>/beginDate} - {tripDetails>/destinationTime1}"  class="ui5_awc_trip__dates" />
 						</VBox>
 					</HBox>
 
@@ -50,19 +50,21 @@
 				<items>
 					<CustomListItem class="ui5-awc__tripsItem" >
 						<core:Icon src="sap-icon://{trips>icon}" />
-						<Text text="{trips>title}" class="ui5-awc__title"/>
+						<Text text="{trips>title}" class="ui5-awc__title" width="38%"/>
 						<Text
 							text="{
-								path: 'trips>out_departureTime0',
+								path: 'trips>departureTime0',
 								formatter: '.formatter.dateFormat'
-								}"/>
+								}"
+							class="ui5-awc-trip-info__date"/>
 						<Text
 							text=" - "/>
 						<Text
 							text="{
-								path: 'trips>out_departureTime0',
+								path: 'trips>departureTime0',
 								formatter: '.formatter.dateFormat'
-								}"/>
+								}"
+							class="ui5-awc-trip-info__date"/>
 					</CustomListItem>
 				</items>
 			</List>

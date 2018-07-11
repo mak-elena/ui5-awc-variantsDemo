@@ -19,8 +19,9 @@ sap.ui.define([
 			},
 
 			dateFormat: function(sValue){
+				var options = { year: 'numeric', month: 'short', day: 'numeric' };
 				var oDate = new Date(sValue);
-				return oDate.toISOString().slice(0,10);
+				return oDate.toLocaleDateString("en-US", options);
 			},
 
 			stringToDate: function(sValue){

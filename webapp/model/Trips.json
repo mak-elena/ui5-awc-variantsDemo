@@ -1,14 +1,14 @@
 [
 	{
-		"title": "conference 1",
-		"icon": "flight",
-		"out_departureTime0": "07/15/2018",
-		"out_destinationTime1": "07/22/2018"
+		"icon": "passenger-train",
+		"title": "UX-DAY",
+		"departureTime0": "Oct 10, 2018",
+		"destinationTime1": "Oct 12, 2018"
 	},
 	{
-		"icon": "passenger-train",
-		"title": "conference 2",
-		"out_departureTime0": "07/20/2018",
-		"out_destinationTime1": "09/29/2018"
+		"title": "SAP TECHED",
+		"icon": "flight",
+		"departureTime0": "Oct 23, 2018",
+		"destinationTime1": "Oct 25, 2018"
 	}
 ]

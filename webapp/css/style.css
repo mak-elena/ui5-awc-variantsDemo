@@ -62,3 +62,7 @@
 .ui5-awc .ui5-awc__title {
 	padding: 0 1rem;
 }
+
+.ui5-awc-trip-info__date {
+	padding: 0 3px;
+}

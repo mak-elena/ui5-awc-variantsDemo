@@ -2,7 +2,7 @@
 	"icon": "flight",
 	"title": "OSCON",
 	"beginDate": "07/15/2018",
-	"out_destinationTime1": "07/21/2018",
+	"destinationTime1": "07/21/2018",
 	"plan": {
 		"outward": [
 			{
@@ -10,26 +10,30 @@
 					"city": "Frankfurt",
 					"country": "DE",
 					"code": "FRA",
-					"date": "07/15/2018 08:00"
+					"date": "07/15/2018 08:00",
+					"gate": "1"
 				},
 				"destination": {
 					"city": "Amsterdam",
 					"country": "DE",
 					"code": "AMS",
-					"date": "07/15/2018 09:00"
+					"date": "07/15/2018 09:00",
+					"gate": "2"
 				}
 			},
 			{
 				"departure": {
 					"city": "Amsterdam",
 					"code": "AMS",
-					"date": "07/15/2018 10:00"
+					"date": "07/15/2018 10:00",
+					"gate": "3"
 				},
 				"destination": {
 					"city": "Portland",
 					"country": "US",
 					"code": "PDX",
-					"date": "07/15/2018 14:00"
+					"date": "07/15/2018 14:00",
+					"gate": "41"
 				}
 			}
 		],

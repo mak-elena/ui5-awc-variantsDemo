@@ -8,199 +8,123 @@ sap.ui.define([],
 			}
 			static get observedAttributes() {
 				return [
-					'out_departureTime0',
-					'out_departureTime1',
-					'out_departureCode0',
-					'out_departureCode1',
-					'out_departurePoint0',
-					'out_departurePoint1',
-					'out_destinationTime0',
-					'out_destinationTime1',
-					'out_destinationCode0',
-					'out_destinationCode1',
-					'out_destinationPoint0',
-					'out_destinationPoint1',
-					'ret_departureTime0',
-					'ret_departureTime1',
-					'ret_departureCode0',
-					'ret_departureCode1',
-					'ret_departurePoint0',
-					'ret_departurePoint1',
-					'ret_destinationTime0',
-					'ret_destinationTime1',
-					'ret_destinationCode0',
-					'ret_destinationCode1',
-					'ret_destinationPoint0',
-					'ret_destinationPoint1'
+					'departureTime0',
+					'departureTime1',
+					'departureGate0',
+					'departureGate1',
+					'departurePoint0',
+					'departurePoint1',
+					'destinationTime0',
+					'destinationTime1',
+					'destinationGate0',
+					'destinationGate1',
+					'destinationPoint0',
+					'destinationPoint1'
 				];
 			}
 
-			get out_departurePoint0() {
-				return this.getAttribute('out_departurePoint0');
+			get departurePoint0() {
+				return this.getAttribute('departurePoint0');
 			}
 
-			set out_departurePoint0(val) {
-				this.setAttribute('out_departurePoint0', val);
+			set departurePoint0(val) {
+				this.setAttribute('departurePoint0', val);
 			}
 
-			get out_departureTime0() {
-				return this.getAttribute('out_departureTime0');
+			get departureTime0() {
+				return this.getAttribute('departureTime0');
 			}
 
-			set out_departureTime0(val) {
-				this.setAttribute('out_departureTime0', val);
+			set departureTime0(val) {
+				this.setAttribute('departureTime0', val);
 			}
 
-			get out_departureCode0() {
-				return this.getAttribute('out_departureCode0');
+			get departureGate0() {
+				return this.getAttribute('departureGate0');
 			}
 
-			set out_departureCode0(val) {
-				this.setAttribute('out_departureCode0', val);
+			set departureGate0(val) {
+				this.setAttribute('departureGate0', val);
 			}
 
-			get out_destinationPoint0() {
-				return this.getAttribute('out_destinationPoint0');
+			get destinationPoint0() {
+				return this.getAttribute('destinationPoint0');
 			}
 
-			set out_destinationPoint0(val) {
-				this.setAttribute('out_destinationPoint0', val);
+			set destinationPoint0(val) {
+				this.setAttribute('destinationPoint0', val);
 			}
 
-			get out_destinationTime0() {
-				return this.getAttribute('out_destinationTime0');
+			get destinationTime0() {
+				return this.getAttribute('destinationTime0');
 			}
 
-			set out_destinationTime0(val) {
-				this.setAttribute('out_destinationTime0', val);
+			set destinationTime0(val) {
+				this.setAttribute('destinationTime0', val);
 			}
 
-			get out_destinationCode0() {
-				return this.getAttribute('out_destinationCode0');
+			get destinationGate0() {
+				return this.getAttribute('destinationGate0');
 			}
 
-			set out_destinationCode0(val) {
-				this.setAttribute('out_destinationCode0', val);
+			set destinationGate0(val) {
+				this.setAttribute('destinationGate0', val);
 			}
 
-			get out_departurePoint1() {
-				return this.getAttribute('out_departurePoint1');
+			get departurePoint1() {
+				return this.getAttribute('departurePoint1');
 			}
 
-			set out_departurePoint1(val) {
-				this.setAttribute('out_departurePoint1', val);
+			set departurePoint1(val) {
+				this.setAttribute('departurePoint1', val);
 			}
 
-			get out_departurePoint1() {
-				return this.getAttribute('out_departurePoint1');
+			get departurePoint1() {
+				return this.getAttribute('departurePoint1');
 			}
 
-			set out_departurePoint1(val) {
-				this.setAttribute('out_departurePoint1', val);
+			set departurePoint1(val) {
+				this.setAttribute('departurePoint1', val);
 			}
 
-			get out_departureTime1() {
-				return this.getAttribute('out_departureTime1');
+			get departureTime1() {
+				return this.getAttribute('departureTime1');
 			}
 
-			set out_departureTime1(val) {
-				this.setAttribute('out_departureTime1', val);
+			set departureTime1(val) {
+				this.setAttribute('departureTime1', val);
 			}
 
-			get out_departureCode1() {
-				return this.getAttribute('out_departureCode1');
+			get departureGate1() {
+				return this.getAttribute('departureGate1');
 			}
 
-			set out_departureCode1(val) {
-				this.setAttribute('out_departureCode1', val);
+			set departureGate1(val) {
+				this.setAttribute('departureGate1', val);
 			}
 
-			get out_destinationPoint1() {
-				return this.getAttribute('out_destinationPoint1');
+			get destinationPoint1() {
+				return this.getAttribute('destinationPoint1');
 			}
 
-			set out_destinationPoint1(val) {
-				this.setAttribute('out_destinationPoint1', val);
+			set destinationPoint1(val) {
+				this.setAttribute('destinationPoint1', val);
 			}
 
-			get out_destinationTime1() {
-				return this.getAttribute('out_destinationTime1');
+			get destinationTime1() {
+				return this.getAttribute('destinationTime1');
 			}
 
-			set out_destinationTime1(val) {
-				this.setAttribute('out_destinationTime1', val);
+			set destinationTime1(val) {
+				this.setAttribute('destinationTime1', val);
 			}
 
-			get out_destinationCode1() {
-				return this.getAttribute('out_destinationCode1');
+			get destinationGate1() {
+				return this.getAttribute('destinationGate1');
 			}
 
-			set out_destinationCode1(val) {
-				this.setAttribute('out_destinationCode1', val);
-			}
-
-			get ret_departurePoint0() {
-				return this.getAttribute('ret_departurePoint0');
-			}
-
-			set ret_departurePoint0(val) {
-				this.setAttribute('ret_departurePoint0', val);
-			}
-
-			get ret_departureTime0() {
-				return this.getAttribute('ret_departureTime0');
-			}
-
-			set ret_departureTime0(val) {
-				this.setAttribute('ret_departureTime0', val);
-			}
-
-			get ret_destinationPoint0() {
-				return this.getAttribute('ret_destinationPoint0');
-			}
-
-			set ret_destinationPoint0(val) {
-				this.setAttribute('ret_destinationPoint0', val);
-			}
-
-			get ret_destinationTime0() {
-				return this.getAttribute('ret_destinationTime0');
-			}
-
-			set ret_destinationTime0(val) {
-				this.setAttribute('ret_destinationTime0', val);
-			}
-
-			get ret_departurePoint1() {
-				return this.getAttribute('ret_departurePoint1');
-			}
-
-			set ret_departurePoint1(val) {
-				this.setAttribute('ret_departurePoint1', val);
-			}
-
-			get ret_departureTime1() {
-				return this.getAttribute('ret_departureTime1');
-			}
-
-			set ret_departureTime1(val) {
-				this.setAttribute('ret_departureTime1', val);
-			}
-
-			get ret_destinationPoint1() {
-				return this.getAttribute('ret_destinationPoint1');
-			}
-
-			set ret_destinationPoint1(val) {
-				this.setAttribute('ret_destinationPoint1', val);
-			}
-
-			get ret_destinationTime1() {
-				return this.getAttribute('ret_destinationTime1');
-			}
-
-			set ret_destinationTime1(val) {
-				this.setAttribute('ret_destinationTime1', val);
+			set destinationGate1(val) {
+				this.setAttribute('destinationGate1', val);
 			}
 
 			attributeChangedCallback(name, oldValue, newValue) {
@@ -218,32 +142,22 @@ sap.ui.define([],
 
 			_update() {
 				if (this._currentVariant != null) {
-					this._currentVariant.out_departurePoint0 = this.out_departurePoint0;
-					this._currentVariant.out_departureCode0 = this.out_departureCode0;
-					this._currentVariant.out_departureTime0 = this.out_departureTime0;
+					this._currentVariant.departurePoint0 = this.departurePoint0;
+					this._currentVariant.departureGate0 = this.departureGate0;
+					this._currentVariant.departureTime0 = this.departureTime0;
 
-					this._currentVariant.out_destinationPoint0 = this.out_destinationPoint0;
-					this._currentVariant.out_destinationCode0 = this.out_destinationCode0;
-					this._currentVariant.out_destinationTime0 = this.out_destinationTime0;
+					this._currentVariant.destinationPoint0 = this.destinationPoint0;
+					this._currentVariant.destinationGate0 = this.destinationGate0;
+					this._currentVariant.destinationTime0 = this.destinationTime0;
 
-					this._currentVariant.out_departurePoint1 = this.out_departurePoint1;
-					this._currentVariant.out_departureTime1 = this.out_departureTime1;
-					this._currentVariant.out_departureCode1 = this.out_departureCode1;
+					this._currentVariant.departurePoint1 = this.departurePoint1;
+					this._currentVariant.departureTime1 = this.departureTime1;
+					this._currentVariant.departureGate1 = this.departureGate1;
 
-					this._currentVariant.out_destinationPoint1 = this.out_destinationPoint1;
-					this._currentVariant.out_destinationTime1 = this.out_destinationTime1;
-					this._currentVariant.out_destinationCode1 = this.out_destinationCode1;
-
-					this._currentVariant.ret_departurePoint0 = this.ret_departurePoint0;
-					this._currentVariant.ret_departureTime0 = this.ret_departureTime0;
-					this._currentVariant.ret_destinationPoint0 = this.ret_destinationPoint0;
-					this._currentVariant.ret_destinationTime0 = this.ret_destinationTime0;
-
-					this._currentVariant.ret_departurePoint1 = this.ret_departurePoint1;
-					this._currentVariant.ret_departureTime1 = this.ret_departureTime1;
-					this._currentVariant.ret_destinationPoint1 = this.ret_destinationPoint1;
-					this._currentVariant.ret_destinationTime1 = this.ret_destinationTime1;
-				}
+					this._currentVariant.destinationPoint1 = this.destinationPoint1;
+					this._currentVariant.destinationTime1 = this.destinationTime1;
+					this._currentVariant.destinationGate1 = this.destinationGate1;
+					}
 			}
 		}
 
@@ -259,8 +173,14 @@ sap.ui.define([],
 				let p = document.createElement('div');
 				p.innerHTML = `
 					<div class="ui5-awc_trip__direction">
-						<div class="ui5-awc_trip__route">
+						<div>
+							<span class="ui5-awc_trip__departure0-time"></span> 
 							<span class="ui5-awc_trip__departure0-city"></span> - 
+							<span class="ui5-awc_trip__destination0-city"></span>
+						</div>
+						<div>
+							<span class="ui5-awc_trip__departure1-time"></span> 
+							<span class="ui5-awc_trip__departure1-city"></span> - 
 							<span class="ui5-awc_trip__destination1-city"></span>
 						</div>
 					</div>`;
@@ -293,17 +213,43 @@ sap.ui.define([],
 				super.connectedCallback();
 
 				this._departureTime0 = this.contentRoot.querySelector("span.ui5-awc_trip__departure0-time");
+				this._departureTime1 = this.contentRoot.querySelector("span.ui5-awc_trip__departure1-time");
 				this._departurePoint0 = this.contentRoot.querySelector("span.ui5-awc_trip__departure0-city");
+				this._departurePoint1 = this.contentRoot.querySelector("span.ui5-awc_trip__departure1-city");
 
-				this._destinationTime1 = this.contentRoot.querySelector("span.ui5-awc_trip__destination1-time");
+				this._destinationPoint0 = this.contentRoot.querySelector("span.ui5-awc_trip__destination0-city");
 				this._destinationPoint1 = this.contentRoot.querySelector("span.ui5-awc_trip__destination1-city");
 			}
 
-			set out_departurePoint0(val) {
+			set departureTime0(val) {
+				this._departureTime0.innerText = new Date(val).toLocaleString("en-US", {
+					year: "2-digit",
+					month: "2-digit",
+					day: "2-digit"
+				});
+			}
+
+			set departureTime1(val) {
+				this._departureTime1.innerText = new Date(val).toLocaleString("en-US", {
+					year: "2-digit",
+					month: "2-digit",
+					day: "2-digit"
+				});
+			}
+
+			set departurePoint0(val) {
 				this._departurePoint0.innerText = val;
 			}
 
-			set out_destinationPoint1(val) {
+			set departurePoint1(val) {
+				this._departurePoint1.innerText = val;
+			}
+
+			set destinationPoint0(val) {
+				this._destinationPoint0.innerText = val;
+			}
+
+			set destinationPoint1(val) {
 				this._destinationPoint1.innerText = val;
 			}
 		}
@@ -317,7 +263,41 @@ sap.ui.define([],
 				return context['details'] == 'mid';
 			}
 
+
 			get template() {
+				let template = document.createDocumentFragment();
+				let s = document.createElement('style');
+				s.innerHTML = this.getStyles();
+				let p = document.createElement('div');
+				p.innerHTML = `
+					<div class="ui5-awc_trip__direction">
+						<div>
+							<div>
+								<span class="ui5-awc_trip__departure0-time"></span> 
+								<span class="ui5-awc_trip__departure0-city"></span>
+							</div>
+							<div>
+								<span class="ui5-awc_trip__destination0-time"></span> 
+								<span class="ui5-awc_trip__destination0-city"></span>
+							</div>
+						</div>
+						<div>
+							<div>
+								<span class="ui5-awc_trip__departure1-time"></span> 
+								<span class="ui5-awc_trip__departure1-city"></span>
+							</div>
+							<div>
+								<span class="ui5-awc_trip__destination1-time"></span> 
+								<span class="ui5-awc_trip__destination1-city"></span>
+							</div>
+						</div>
+					</div>`;
+				template.appendChild(s);
+				template.appendChild(p);
+				return template;
+			}
+
+/*			get template() {
 				let template = document.createDocumentFragment();
 				let p = document.createElement('div');
 				p.innerHTML = `
@@ -331,80 +311,36 @@ sap.ui.define([],
 							<span class="ui5-awc_trip__departure1-city"></span> - 
 							<span class="ui5-awc_trip__destination1-city"></span>
 						</div>
-						<div class="ui5-awc_trip__ret-route">
-							<div>
-								<span class="ui5-awc_trip__ret-departure0-time"></span> -
-								<span class="ui5-awc_trip__ret-destination1-time"></span>
-							</div>
-							<span class="ui5-awc_trip__ret-departure0-city"></span> - 
-							<span class="ui5-awc_trip__ret-departure1-city"></span> - 
-							<span class="ui5-awc_trip__ret-destination1-city"></span>
-						</div>
 					</div>`;
 				template.appendChild(p);
 				return template;
-			}
+			}*/
 
 			connectedCallback() {
 				super.connectedCallback();
 
-				this._destinationPoint0 = this.contentRoot.querySelector("span.ui5-awc_trip__destination0-city");
-				this._departurePoint1 = this.contentRoot.querySelector("span.ui5-awc_trip__departure1-city");
+				this._departureTime0 = this.contentRoot.querySelector("span.ui5-awc_trip__departure0-time");
+				this._departureTime1 = this.contentRoot.querySelector("span.ui5-awc_trip__departure1-time");
+				this._destinationTime0 = this.contentRoot.querySelector("span.ui5-awc_trip__destination0-time");
 				this._destinationTime1 = this.contentRoot.querySelector("span.ui5-awc_trip__destination1-time");
+				}
 
-				this._ret_departurePoint0 = this.contentRoot.querySelector("span.ui5-awc_trip__ret-departure0-city");
-				this._ret_departurePoint1 = this.contentRoot.querySelector("span.ui5-awc_trip__ret-departure1-city");
-				this._ret_destinationPoint1 = this.contentRoot.querySelector("span.ui5-awc_trip__ret-destination1-city");
-				this._ret_departureTime0 = this.contentRoot.querySelector("span.ui5-awc_trip__ret-departure0-time");
-				this._ret_destinationTime1 = this.contentRoot.querySelector("span.ui5-awc_trip__ret-destination1-time");
+
+
+			set departureTime0(val) {
+				this._departureTime0.innerText = val;
 			}
 
-
-
-			set out_departureTime0(val) {
-				this._departureTime0.innerText = new Date(val).toLocaleString("en-US", {
-					year: "2-digit",
-					month: "2-digit",
-					day: "2-digit"
-				});
+			set departureTime1(val) {
+				this._departureTime1.innerText = val;
 			}
 
-			set out_destinationTime1(val) {
-				this._destinationTime1.innerText = new Date(val).toLocaleString("en-US", {
-					year: "2-digit",
-					month: "2-digit",
-					day: "2-digit"
-				});
+			set destinationTime0(val) {
+				this._destinationTime0.innerText = val;
 			}
 
-			set out_departurePoint1(val) {
-				this._departurePoint1.innerText = val;
-			}
-
-			set ret_departureTime0(val) {
-				this._ret_departureTime0.innerText = new Date(val).toLocaleString("en-US", {
-					year: "2-digit",
-					month: "2-digit",
-					day: "2-digit"
-				});
-			}
-
-			set ret_destinationTime1(val) {
-				this._ret_destinationTime1.innerText = new Date(val).toLocaleString("en-US", {
-					year: "2-digit",
-					month: "2-digit",
-					day: "2-digit"
-				});
-			}
-
-			set ret_departurePoint0(val) {
-				this._ret_departurePoint0.innerText = val;
-			}
-			set ret_departurePoint1(val) {
-				this._ret_departurePoint1.innerText = val;
-			}
-			set ret_destinationPoint1(val) {
-				this._ret_destinationPoint1.innerText = val;
+			set destinationTime1(val) {
+				this._destinationTime1.innerText = val;
 			}
 		}
 
@@ -416,28 +352,11 @@ sap.ui.define([],
 			connectedCallback() {
 				super.connectedCallback();
 
-				this._departurePoint0 = this.contentRoot.querySelector("span.ui5-awc_trip__departure0-city");
-				this._departureTime0 = this.contentRoot.querySelector("span.ui5-awc_trip__departure0-time");
-				this._departureCode0 = this.contentRoot.querySelector("span.ui5-awc_trip__departure0-code");
-
-				this._departurePoint1 = this.contentRoot.querySelector("span.ui5-awc_trip__departure1-city");
-				this._departureTime1 = this.contentRoot.querySelector("span.ui5-awc_trip__departure1-time");
-				this._departureCode1 = this.contentRoot.querySelector("span.ui5-awc_trip__departure1-code");
-
-				this._destinationPoint0 = this.contentRoot.querySelector("span.ui5-awc_trip__destination0-city");
-				this._destinationTime0 = this.contentRoot.querySelector("span.ui5-awc_trip__destination0-time");
-				this._destinationCode0 = this.contentRoot.querySelector("span.ui5-awc_trip__destination0-code");
-
-				this._destinationPoint1 = this.contentRoot.querySelector("span.ui5-awc_trip__destination1-city");
-				this._destinationTime1 = this.contentRoot.querySelector("span.ui5-awc_trip__destination1-time");
-				this._destinationCode1 = this.contentRoot.querySelector("span.ui5-awc_trip__destination1-code");
-
-				this._ret_departureTime0 = this.contentRoot.querySelector("span.ui5-awc_trip__ret-departure0-time");
-				this._ret_destinationTime1 = this.contentRoot.querySelector("span.ui5-awc_trip__ret-destination1-time");
-				this._ret_departurePoint0 = this.contentRoot.querySelector("span.ui5-awc_trip__ret-departure0-city");
-				this._ret_departurePoint1 = this.contentRoot.querySelector("span.ui5-awc_trip__ret-departure1-city");
-				this._ret_destinationPoint1 = this.contentRoot.querySelector("span.ui5-awc_trip__ret-destination1-city");
-			}
+				this._departureGate0 = this.contentRoot.querySelector("span.ui5-awc_trip__departure0-gate");
+				this._destinationGate0 = this.contentRoot.querySelector("span.ui5-awc_trip__destination0-gate");
+				this._departureGate1 = this.contentRoot.querySelector("span.ui5-awc_trip__departure1-gate");
+				this._destinationGate1 = this.contentRoot.querySelector("span.ui5-awc_trip__destination1-gate");
+				}
 
 			static matches(context) {
 				return context['details'] == 'full';
@@ -448,86 +367,56 @@ sap.ui.define([],
 				let p = document.createElement('div');
 				p.innerHTML = `
 					<div class="ui5-awc_trip__direction">
-						<div class="ui5-awc_trip__route">
+						<div>
 							<div>
-								<span class="ui5-awc_trip__departure0-time"></span>
+								<span class="ui5-awc_trip__departure0-time"></span> 
 								<span class="ui5-awc_trip__departure0-city"></span>
-								(<span class="ui5-awc_trip__departure0-code"></span>)
+								<span class="ui5-awc_trip__departure0-gate"></span>
 							</div>
 							<div>
-								<span class="ui5-awc_trip__destination0-time"></span>
+								<span class="ui5-awc_trip__destination0-time"></span> 
 								<span class="ui5-awc_trip__destination0-city"></span>
-								(<span class="ui5-awc_trip__destination0-code"></span>)
-							</div>
-							<div>
-								<span class="ui5-awc_trip__departure1-time"></span>
-								<span class="ui5-awc_trip__departure1-city"></span>
-								(<span class="ui5-awc_trip__departure1-code"></span>)
-							</div>
-							<div>
-								<span class="ui5-awc_trip__destination1-time"></span>
-								<span class="ui5-awc_trip__destination1-city"></span>
-								(<span class="ui5-awc_trip__destination1-code"></span>)
+								<span class="ui5-awc_trip__destination0-gate"></span>
 							</div>
 						</div>
 						<div>
-							<span class="ui5-awc_trip__ret-departure0-time"></span> -
-							<span class="ui5-awc_trip__ret-destination1-time"></span>
-							<span class="ui5-awc_trip__ret-departure0-city"></span> - 
-							<span class="ui5-awc_trip__ret-departure1-city"></span> - 
-							<span class="ui5-awc_trip__ret-destination1-city"></span>
+							<div>
+								<span class="ui5-awc_trip__departure1-time"></span> 
+								<span class="ui5-awc_trip__departure1-city"></span>
+								<span class="ui5-awc_trip__departure1-gate"></span>
+							</div>
+							<div>
+								<span class="ui5-awc_trip__destination1-time"></span> 
+								<span class="ui5-awc_trip__destination1-city"></span>
+								<span class="ui5-awc_trip__destination1-gate"></span>
+							</div>
 						</div>
 					</div>`;
 				template.appendChild(p);
 				return template;
 			}
 
-			set out_departureTime0(val) {
-				this._departureTime0.innerText = new Date(val).toLocaleString("en-US", {
-					year: "2-digit",
-					month: "2-digit",
-					day: "2-digit"
-				});
+			set departureGate0(val) {
+				this._departureGate0.innerText = val;
 			}
 
-			set out_departureTime1(val) {
-				this._departureTime1.innerText = new Date(val).toLocaleString("en-US", {
-					year: "2-digit",
-					month: "2-digit",
-					day: "2-digit"
-				});
+			set departureGate1(val) {
+				this._departureGate1.innerText = val;
 			}
 
-			set out_destinationTime1(val) {
-				this._destinationTime1.innerText = new Date(val).toLocaleString("en-US", {
-					year: "2-digit",
-					month: "2-digit",
-					day: "2-digit"
-				});
-			}
-			/*set ret_departureTime0(val) {
-				this._ret_departureTime0.innerText = new Date(val).toLocaleString("en-US", {
-					year: "2-digit",
-					month: "2-digit",
-					day: "2-digit"
-				});
+			set destinationGate0(val) {
+				this._destinationGate0.innerText = val;
 			}
 
-			set ret_destinationTime1(val) {
-				this._ret_destinationTime1.innerText = new Date(val).toLocaleString("en-US", {
-					year: "2-digit",
-					month: "2-digit",
-					day: "2-digit"
-				});
+			set destinationGate1(val) {
+				this._destinationGate1.innerText = val;
 			}
-*/
 
-
-			set out_destinationPoint0(val) {
+			set destinationPoint0(val) {
 				this._destinationPoint0.innerText = val;
 			}
 
-			set out_departurePoint1(val) {
+			set departurePoint1(val) {
 				this._departurePoint1.innerText = val;
 			}
 

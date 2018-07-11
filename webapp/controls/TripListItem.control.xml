@@ -9,17 +9,17 @@
 		<core:Icon src="sap-icon://flight" />
 		<Text text="{$this>title}" class="ui5-awc-productItem__name"/>
 		<Text text="{
-				path: '$this>out_departureTime0',
+				path: '$this>departureTime0',
 				type: 'sap.ui.model.type.DateTime',
 				formatOptions: {
-					style: 'short'
+					style: 'long'
 					}
 			}" />
 		<Text text="{
 				path: '$this>endtDate',
 				type: 'sap.ui.model.type.DateTime',
 				formatOptions: {
-					style: 'short'
+					style: 'long'
 					}
 			}" />
 		<!--Custom details control -->
