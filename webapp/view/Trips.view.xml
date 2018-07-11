@@ -39,7 +39,7 @@
 						<core:Icon src="sap-icon://{tripDetails>/icon}" class="ui5_awc_trip__icon" />
 						<VBox>
 							<Text text="{tripDetails>/title}" class="ui5_awc_trip__title"/>
-							<Text text="{tripDetails>/beginDate} - {tripDetails>/destinationTime1}"  class="ui5_awc_trip__dates" />
+							<Text text="{tripDetails>/beginDate} - {tripDetails>/endDate}"  class="ui5_awc_trip__dates" />
 						</VBox>
 					</HBox>
 

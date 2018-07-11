@@ -1,6 +1,6 @@
 sap.ui.define([
 		'sap/ui/core/Control',
-		'ui5/awc/TripInformationVariantManager',
+		'ui5/awc/TripComponent',
 		'ui5/awc/BackTripComponent'
 	],
 	function (Control) {
@@ -31,7 +31,7 @@ sap.ui.define([
 				oRM.writeClasses();
 				oRM.write(">");
 
-				oRM.write("<trip-details");
+				oRM.write("<trip-info");
 
 				// outwards
 				var oFlightDetails = oDetails.outward[0].departure;
@@ -55,9 +55,9 @@ sap.ui.define([
 				oRM.writeAttributeEscaped("destinationTime1", oFlightDetails.date);
 				oRM.writeAttributeEscaped("destinationGate1", sGateTpl.replace("{0}",oFlightDetails.gate));
 				oRM.write(">");
-				oRM.write("</trip-details>");
+				oRM.write("</trip-info>");
 
-				oRM.write("<back-trip");
+				oRM.write("<back-trip-info");
 
 				oFlightDetails = oDetails.return[0].departure;
 				oRM.writeAttributeEscaped("departurePoint0", sTripPointTpl.replace("{0}",oFlightDetails.city).replace("{1}",oFlightDetails.code));
@@ -73,7 +73,7 @@ sap.ui.define([
 				oFlightDetails = oDetails.return[1].destination;
 				oRM.writeAttributeEscaped("destinationPoint1", sTripPointTpl.replace("{0}",oFlightDetails.city).replace("{1}",oFlightDetails.code));
 					oRM.write(">");
-				oRM.write("</back-trip>");
+				oRM.write("</back-trip-info>");
 				oRM.write("</div>");
 			}
 		});

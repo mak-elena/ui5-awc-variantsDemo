@@ -188,5 +188,5 @@ sap.ui.define([],
 
 		BackTripComponent.defaultVariant = ShortBackTripInfoVariant;
 
-		customElements.define('back-trip', BackTripComponent);
+		customElements.define('back-trip-info', BackTripComponent);
 	});

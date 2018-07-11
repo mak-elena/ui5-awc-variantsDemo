@@ -2,7 +2,7 @@
 	"icon": "flight",
 	"title": "OSCON",
 	"beginDate": "07/15/2018",
-	"destinationTime1": "07/21/2018",
+	"endDate": "07/21/2018",
 	"plan": {
 		"outward": [
 			{
