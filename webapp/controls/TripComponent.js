@@ -117,7 +117,7 @@ sap.ui.define([],
 			}
 
 			static matches(context) {
-				return context['details'] == 'short';
+				return context['daysLeft'] >= 7;
 			}
 
 			get template() {

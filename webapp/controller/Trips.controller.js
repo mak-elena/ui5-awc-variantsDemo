@@ -28,6 +28,7 @@ sap.ui.define([
 				var oValue = oEvent.getParameter("value"),
 					oSelectedDate = new Date(oValue),
 					oTripDate = this._getTripDate();
+
 			},
 
 			/* =========================================================== */
