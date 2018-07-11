@@ -10,16 +10,10 @@ sap.ui.define([],
 				return [
 					'departureTime0',
 					'departureTime1',
-					'destinationTime0',
-					'destinationTime1',
 					'departurePoint0',
 					'departurePoint1',
 					'destinationPoint0',
-					'destinationPoint1',
-					'departureGate0',
-					'departureGate1',
-					'destinationGate0',
-					'destinationGate1'
+					'destinationPoint1'
 				];
 			}
 
@@ -30,14 +24,6 @@ sap.ui.define([],
 
 			set departureTime0(val) {
 				this.setAttribute('departureTime0', val);
-			}
-
-			get destinationTime0() {
-				return this.getAttribute('destinationTime0');
-			}
-
-			set destinationTime0(val) {
-				this.setAttribute('destinationTime0', val);
 			}
 
 			get departureTime1() {
@@ -97,38 +83,6 @@ sap.ui.define([],
 				this.setAttribute('destinationPoint1', val);
 			}
 
-			get departureGate0() {
-				return this.getAttribute('departureGate0');
-			}
-
-			set departureGate0(val) {
-				this.setAttribute('departureGate0', val);
-			}
-
-			get destinationGate0() {
-				return this.getAttribute('destinationGate0');
-			}
-
-			set destinationGate0(val) {
-				this.setAttribute('destinationGate0', val);
-			}
-
-			get departureGate1() {
-				return this.getAttribute('departureGate1');
-			}
-
-			set departureGate1(val) {
-				this.setAttribute('departureGate1', val);
-			}
-
-			get destinationGate1() {
-				return this.getAttribute('destinationGate1');
-			}
-
-			set destinationGate1(val) {
-				this.setAttribute('destinationGate1', val);
-			}
-
 			attributeChangedCallback(name, oldValue, newValue) {
 				super.attributeChangedCallback(name, oldValue, newValue);
 				this._update();
@@ -145,27 +99,25 @@ sap.ui.define([],
 			_update() {
 				if (this._currentVariant != null) {
 					this._currentVariant.departurePoint0 = this.departurePoint0;
-					this._currentVariant.departureGate0 = this.departureGate0;
 					this._currentVariant.departureTime0 = this.departureTime0;
 
 					this._currentVariant.destinationPoint0 = this.destinationPoint0;
-					this._currentVariant.destinationGate0 = this.destinationGate0;
-					this._currentVariant.destinationTime0 = this.destinationTime0;
 
 					this._currentVariant.departurePoint1 = this.departurePoint1;
 					this._currentVariant.departureTime1 = this.departureTime1;
-					this._currentVariant.departureGate1 = this.departureGate1;
 
 					this._currentVariant.destinationPoint1 = this.destinationPoint1;
-					this._currentVariant.destinationTime1 = this.destinationTime1;
-					this._currentVariant.destinationGate1 = this.destinationGate1;
-					}
+				}
 			}
 		}
 
 		class ShortTripInformationVariant extends awc.AdaptiveVariant {
 			constructor() {
 				super();
+			}
+
+			static matches(context) {
+				return context['details'] == 'short';
 			}
 
 			get template() {
@@ -205,10 +157,6 @@ sap.ui.define([],
 						font-size: 1.25rem;
 					}
 				</style>`
-			}
-
-			static matches(context) {
-				return context['details'] == 'short';
 			}
 
 			connectedCallback() {
@@ -256,157 +204,7 @@ sap.ui.define([],
 			}
 		}
 
-		class MidTripInformationVariant extends ShortTripInformationVariant {
-			constructor() {
-				super();
-			}
-
-			static matches(context) {
-				return context['details'] == 'mid';
-			}
-
-
-			get template() {
-				let template = document.createDocumentFragment();
-				let s = document.createElement('style');
-				s.innerHTML = this.getStyles();
-				let p = document.createElement('div');
-				p.innerHTML = `
-					<div class="ui5-awc_trip__direction">
-						<div>
-							<div>
-								<span class="ui5-awc_trip__departure0-time"></span> 
-								<span class="ui5-awc_trip__departure0-port"></span>
-							</div>
-							<div>
-								<span class="ui5-awc_trip__destination0-time"></span> 
-								<span class="ui5-awc_trip__destination0-port"></span>
-							</div>
-						</div>
-						<div>
-							<div>
-								<span class="ui5-awc_trip__departure1-time"></span> 
-								<span class="ui5-awc_trip__departure1-port"></span>
-							</div>
-							<div>
-								<span class="ui5-awc_trip__destination1-time"></span> 
-								<span class="ui5-awc_trip__destination1-port"></span>
-							</div>
-						</div>
-					</div>`;
-				template.appendChild(s);
-				template.appendChild(p);
-				return template;
-			}
-
-			connectedCallback() {
-				super.connectedCallback();
-
-				this._departureTime0 = this.contentRoot.querySelector("span.ui5-awc_trip__departure0-time");
-				this._departureTime1 = this.contentRoot.querySelector("span.ui5-awc_trip__departure1-time");
-				this._destinationTime0 = this.contentRoot.querySelector("span.ui5-awc_trip__destination0-time");
-				this._destinationTime1 = this.contentRoot.querySelector("span.ui5-awc_trip__destination1-time");
-				}
-
-
-
-			set departureTime0(val) {
-				this._departureTime0.innerText = val;
-			}
-
-			set departureTime1(val) {
-				this._departureTime1.innerText = val;
-			}
-
-			set destinationTime0(val) {
-				this._destinationTime0.innerText = val;
-			}
-
-			set destinationTime1(val) {
-				this._destinationTime1.innerText = val;
-			}
-		}
-
-		class FullTripInformationVariant extends MidTripInformationVariant {
-			constructor() {
-				super();
-			}
-
-			connectedCallback() {
-				super.connectedCallback();
-
-				this._departureGate0 = this.contentRoot.querySelector("span.ui5-awc_trip__departure0-gate");
-				this._destinationGate0 = this.contentRoot.querySelector("span.ui5-awc_trip__destination0-gate");
-				this._departureGate1 = this.contentRoot.querySelector("span.ui5-awc_trip__departure1-gate");
-				this._destinationGate1 = this.contentRoot.querySelector("span.ui5-awc_trip__destination1-gate");
-				}
-
-			static matches(context) {
-				return context['details'] == 'full';
-			}
-
-			get template() {
-				let template = document.createDocumentFragment();
-				let p = document.createElement('div');
-				p.innerHTML = `
-					<div class="ui5-awc_trip__direction">
-						<div>
-							<div>
-								<span class="ui5-awc_trip__departure0-time"></span> 
-								<span class="ui5-awc_trip__departure0-port"></span>
-								<span class="ui5-awc_trip__departure0-gate"></span>
-							</div>
-							<div>
-								<span class="ui5-awc_trip__destination0-time"></span> 
-								<span class="ui5-awc_trip__destination0-port"></span>
-								<span class="ui5-awc_trip__destination0-gate"></span>
-							</div>
-						</div>
-						<div>
-							<div>
-								<span class="ui5-awc_trip__departure1-time"></span> 
-								<span class="ui5-awc_trip__departure1-port"></span>
-								<span class="ui5-awc_trip__departure1-gate"></span>
-							</div>
-							<div>
-								<span class="ui5-awc_trip__destination1-time"></span> 
-								<span class="ui5-awc_trip__destination1-port"></span>
-								<span class="ui5-awc_trip__destination1-gate"></span>
-							</div>
-						</div>
-					</div>`;
-				template.appendChild(p);
-				return template;
-			}
-
-			set departureGate0(val) {
-				this._departureGate0.innerText = val;
-			}
-
-			set departureGate1(val) {
-				this._departureGate1.innerText = val;
-			}
-
-			set destinationGate0(val) {
-				this._destinationGate0.innerText = val;
-			}
-
-			set destinationGate1(val) {
-				this._destinationGate1.innerText = val;
-			}
-
-			set destinationPoint0(val) {
-				this._destinationPoint0.innerText = val;
-			}
-
-			set departurePoint1(val) {
-				this._departurePoint1.innerText = val;
-			}
-		}
-
 		TripInformationComponent.registerVariant(ShortTripInformationVariant);
-		TripInformationComponent.registerVariant(MidTripInformationVariant);
-		TripInformationComponent.registerVariant(FullTripInformationVariant);
 
 		TripInformationComponent.defaultVariant = ShortTripInformationVariant;
 

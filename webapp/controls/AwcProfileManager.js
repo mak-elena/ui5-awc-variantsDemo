@@ -22,7 +22,7 @@ sap.ui.define([
 			},
 
 			initProfile: function() {
-				this.getInstance(); //.changeProfile({"vibration": 1});
+				this.getInstance();
 			},
 
 			updateProfile: function(oData) {

@@ -36,23 +36,16 @@ sap.ui.define([
 				var oFlightDetails = oDetails.outward[0].departure;
 				oRM.writeAttributeEscaped("departurePoint0", sTripPointTpl.replace("{0}",oFlightDetails.city).replace("{1}",oFlightDetails.code));
 				oRM.writeAttributeEscaped("departureTime0", oFlightDetails.date);
-				oRM.writeAttributeEscaped("departureGate0", sGateTpl.replace("{0}",oFlightDetails.gate));
 
 				oFlightDetails = oDetails.outward[0].destination;
 				oRM.writeAttributeEscaped("destinationPoint0",sTripPointTpl.replace("{0}",oFlightDetails.city).replace("{1}",oFlightDetails.code));
-				oRM.writeAttributeEscaped("destinationTime0", oFlightDetails.date);
-				oRM.writeAttributeEscaped("destinationGate0", sGateTpl.replace("{0}",oFlightDetails.gate));
-
 
 				oFlightDetails = oDetails.outward[1].departure;
 				oRM.writeAttributeEscaped("departurePoint1", sTripPointTpl.replace("{0}",oFlightDetails.city).replace("{1}",oFlightDetails.code));
 				oRM.writeAttributeEscaped("departureTime1", oFlightDetails.date);
-				oRM.writeAttributeEscaped("departureGate1", sGateTpl.replace("{0}",oFlightDetails.gate));
 
 				oFlightDetails = oDetails.outward[1].destination;
 				oRM.writeAttributeEscaped("destinationPoint1",sTripPointTpl.replace("{0}",oFlightDetails.city).replace("{1}",oFlightDetails.code));
-				oRM.writeAttributeEscaped("destinationTime1", oFlightDetails.date);
-				oRM.writeAttributeEscaped("destinationGate1", sGateTpl.replace("{0}",oFlightDetails.gate));
 				oRM.write(">");
 				oRM.write("</trip-info>");
 
