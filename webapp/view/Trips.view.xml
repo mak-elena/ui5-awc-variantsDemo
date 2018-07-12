@@ -34,7 +34,7 @@
 		<!-- Content -->
 		<semantic:content>
 			<VBox>
-				<Panel  class="ui5_awc_trip">
+				<Panel  class="ui5_awc_trip sapUiNoContentPadding">
 					<HBox>
 						<core:Icon src="sap-icon://{tripDetails>/icon}" class="ui5_awc_trip__icon" />
 						<VBox>
