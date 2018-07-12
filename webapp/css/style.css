@@ -66,3 +66,19 @@
 .ui5-awc-trip-info__date {
 	padding: 0 3px;
 }
+
+.sapMPanel.ui5-awc-trip__panel {
+	overflow: visible;
+	margin-bottom: 0.75rem;
+}
+
+.sapMPanel.ui5-awc-trip__panel:before {
+	content: '';
+	position: absolute;
+	top: -5px;
+	left: -5px;
+	right: -5px;
+	bottom: -5px;
+	border: 1px solid #3f5161;
+	border-radius: 0.2rem;
+}

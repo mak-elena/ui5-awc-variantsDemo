@@ -81,7 +81,7 @@ sap.ui.define([],
 			_update() {
 				if (this._currentVariant != null) {
 					this._currentVariant.departureTime0 = this.departureTime0;
-					this._currentVariant.departureTime1 = this.departureTime0;
+					this._currentVariant.departureTime1 = this.departureTime1;
 					this._currentVariant.departurePoint0 = this.departurePoint0;
 					this._currentVariant.departurePoint1 = this.departurePoint1;
 					this._currentVariant.destinationPoint0 = this.destinationPoint0;
@@ -132,7 +132,10 @@ sap.ui.define([],
 						font-weight: bolder;
 						font-size: 1.25rem;
 					}
-					
+					.ui5-awc-trip__flight{
+						padding: 0.2rem 0;
+						color: #6e6e6e;
+					}
 					.ui5-awc-trip__flight > span {
 						display: inline-block;
 					}

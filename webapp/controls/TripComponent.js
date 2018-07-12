@@ -177,12 +177,12 @@ sap.ui.define([],
 					<div class="ui5-awc_trip__direction">
 						<div class="ui5-awc-trip__flight">
 							<span class="ui5-awc_trip__departure0-time"></span> 
-							<span class="ui5-awc_trip__departure0-port"></span> - 
+							<span class="ui5-awc_trip__departure0-port"></span> -
 							<span class="ui5-awc_trip__destination0-port"></span>
 						</div>
 						<div class="ui5-awc-trip__flight">
 							<span class="ui5-awc_trip__departure1-time"></span> 
-							<span class="ui5-awc_trip__departure1-port"></span> - 
+							<span class="ui5-awc_trip__departure1-port"></span> -
 							<span class="ui5-awc_trip__destination1-port"></span>
 						</div>
 					</div>`;
@@ -207,6 +207,11 @@ sap.ui.define([],
 						font-size: 1.25rem;
 					}
 
+					.ui5-awc-trip__flight{
+						padding: 0.2rem 0;
+						color: #3f5161;
+					}
+
 					.ui5-awc-trip__flight > span {
 						display: inline-block;
 					}
@@ -223,7 +228,7 @@ sap.ui.define([],
 			}
 
 			static matches(context) {
-				return context['daysLeft'] >= 7;
+				return context['daysLeft'] > 7;
 			}
 
 			connectedCallback() {
@@ -277,7 +282,7 @@ sap.ui.define([],
 			}
 
 			static matches(context) {
-				return context['daysLeft'] > 1 && context['daysLeft'] < 7;
+				return context['daysLeft'] > 1 && context['daysLeft'] <= 7;
 			}
 
 

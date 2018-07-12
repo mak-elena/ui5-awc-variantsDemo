@@ -19,22 +19,27 @@
 		<semantic:titleHeading>
 			<Title text="{i18n>uiStructureExampleName}"/>
 		</semantic:titleHeading>
-
-		<semantic:titleSnappedContent>
-			<Text text="{i18n>sampleShortDescription}"/>
-		</semantic:titleSnappedContent>
-
 		<semantic:headerContent>
-			<DatePicker
+			<Title text="{i18n>timeBeforeTripText}" />
+			<SegmentedButton
+				selectedKey="30" width="100%"
+				selectionChange="onDateChanged">
+			<items>
+				<SegmentedButtonItem text="{i18n>oneMonthText}" key="30" />
+				<SegmentedButtonItem text="{i18n>oneWeekText}" key="7" />
+				<SegmentedButtonItem text="{i18n>tripDayText}" key="1" />
+			</items>
+			</SegmentedButton>
+			<!--<DatePicker
 				id="datePicker"
 				width="100%"
-				change="onDateChanged"/>
+				change="onDateChanged"/>-->
 		</semantic:headerContent>
 
 		<!-- Content -->
 		<semantic:content>
 			<VBox>
-				<Panel  class="ui5_awc_trip sapUiNoContentPadding">
+				<Panel  class="ui5-awc-trip__panel sapUiNoContentPadding" backgroundDesign="Transparent">
 					<HBox>
 						<core:Icon src="sap-icon://{tripDetails>/icon}" class="ui5_awc_trip__icon" />
 						<VBox>

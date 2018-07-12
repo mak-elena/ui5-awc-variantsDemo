@@ -16,7 +16,6 @@ sap.ui.define([
 			/* =========================================================== */
 
 			onInit : function () {
-				this._setInitialDate();
 				this.getRouter().getRoute("trips").attachPatternMatched(this._onObjectMatched, this);
 			},
 
@@ -25,12 +24,8 @@ sap.ui.define([
 			/* =========================================================== */
 
 			onDateChanged: function(oEvent) {
-				var oValue = oEvent.getParameter("value"),
-					oSelectedDate = new Date(oValue),
-					oTripDate = this._getTripDate();
-
-				var iDiffDays = formatter.getDateDiffDays(oSelectedDate,oTripDate);
-				AwcProfileStore.updateProfile({"daysLeft": iDiffDays});
+				var oDaysLeft = oEvent.getParameter("item").getKey();
+				AwcProfileStore.updateProfile({"daysLeft": oDaysLeft});
 			},
 
 			/* =========================================================== */
@@ -44,17 +39,6 @@ sap.ui.define([
 			 * @private
 			 */
 			_onObjectMatched : function (oEvent) {
-			},
-
-			_setInitialDate: function() {
-				var oTripDetails = this.getOwnerComponent().getModel("tripDetails");
-				var sTripDate = oTripDetails.getProperty("/beginDate");
-				var oTripDate = new Date(sTripDate);
-				var oCurrentDate = new Date();
-				oCurrentDate.setDate(oTripDate.getDate() - 20);
-				var oDatePicker = this.byId("datePicker");
-				oDatePicker.setDateValue(oCurrentDate);
-				//this.byId("calendar").displayDate(oTripDate);
 			},
 
 			_getTripDate: function() {
