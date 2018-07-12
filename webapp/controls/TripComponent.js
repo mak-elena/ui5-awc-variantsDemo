@@ -127,12 +127,12 @@ sap.ui.define([],
 				let p = document.createElement('div');
 				p.innerHTML = `
 					<div class="ui5-awc_trip__direction">
-						<div>
+						<div class="ui5-awc-trip__flight">
 							<span class="ui5-awc_trip__departure0-time"></span> 
 							<span class="ui5-awc_trip__departure0-port"></span> - 
 							<span class="ui5-awc_trip__destination0-port"></span>
 						</div>
-						<div>
+						<div class="ui5-awc-trip__flight">
 							<span class="ui5-awc_trip__departure1-time"></span> 
 							<span class="ui5-awc_trip__departure1-port"></span> - 
 							<span class="ui5-awc_trip__destination1-port"></span>
@@ -150,13 +150,28 @@ sap.ui.define([],
 					}
 					
 					.ui5-awc_trip__direction {
-						 margin: 0.75rem 0;
+						 padding: 0.75rem 0;
+						 border-bottom: 1px solid;
 					}
+
 					.ui5-awc_trip__appointment {
 						font-weight: bolder;
 						font-size: 1.25rem;
 					}
-				</style>`
+
+					.ui5-awc-trip__flight > span {
+						display: inline-block;
+					}
+
+					span[class$='-time'] {
+						font-weight: bold;
+					}
+
+					span[class$='-port'] {
+						width: 38%;
+						max-width: 200px;
+					}
+				</style>`;
 			}
 
 			connectedCallback() {

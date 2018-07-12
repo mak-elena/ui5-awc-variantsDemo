@@ -103,12 +103,12 @@ sap.ui.define([],
 				let p = document.createElement('div');
 				p.innerHTML = `
 					<div class="ui5-awc_trip__direction">
-						<div>
+						<div class="ui5-awc-trip__flight">
 							<span class="ui5-awc_trip__departure0-time"></span> 
 							<span class="ui5-awc_trip__departure0-city"></span> - 
 							<span class="ui5-awc_trip__destination0-city"></span>
 						</div>
-						<div>
+						<div class="ui5-awc-trip__flight">
 							<span class="ui5-awc_trip__departure1-time"></span> 
 							<span class="ui5-awc_trip__departure1-city"></span> - 
 							<span class="ui5-awc_trip__destination1-city"></span>
@@ -132,7 +132,19 @@ sap.ui.define([],
 						font-weight: bolder;
 						font-size: 1.25rem;
 					}
-				</style>`
+					
+					.ui5-awc-trip__flight > span {
+						display: inline-block;
+					}
+					span[class$='-time'] {
+						font-weight: bold;
+					}
+
+					span[class$='-city'] {
+						width: 38%;
+						max-width: 200px;
+					}
+				</style>`;
 			}
 
 			static matches(context) {

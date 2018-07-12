@@ -15,7 +15,7 @@
 				},
 				"destination": {
 					"city": "Amsterdam",
-					"country": "DE",
+					"country": "NL",
 					"code": "AMS",
 					"date": "07/15/2018 09:00",
 					"gate": "2"
@@ -24,6 +24,7 @@
 			{
 				"departure": {
 					"city": "Amsterdam",
+					"country": "NL",
 					"code": "AMS",
 					"date": "07/15/2018 10:00",
 					"gate": "3"
@@ -40,29 +41,30 @@
 		"return": [
 			{
 				"departure": {
-					"city": "Frankfurtr",
-					"country": "DE",
-					"code": "FRA",
-					"date": "07/15/2018 08:00"
+					"city": "Portland",
+					"country": "US",
+					"code": "PDX",
+					"date": "07/20/2018 12:00"
 				},
 				"destination": {
-					"city": "Amsterdamr",
-					"country": "DE",
+					"city": "Amsterdam",
+					"country": "NL",
 					"code": "AMS",
-					"date": "07/15/2018 08:00"
+					"date": "07/21/2018 08:00"
 				}
 			},
 			{
 				"departure": {
-					"city": "Amsterdamr",
+					"city": "Amsterdam",
 					"code": "AMS",
-					"date": "07/15/2018 08:00"
+					"country": "NL",
+					"date": "07/21/2018 09:00"
 				},
 				"destination": {
-					"city": "Portlandr",
-					"country": "US",
-					"code": "PDX",
-					"date": "07/15/2018 08:00"
+					"city": "Frankfurt",
+					"country": "DE",
+					"code": "FRA",
+					"date": "07/21/2018 11:00"
 				}
 			}
 		]

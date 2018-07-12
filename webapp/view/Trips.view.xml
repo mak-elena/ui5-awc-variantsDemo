@@ -34,7 +34,7 @@
 		<!-- Content -->
 		<semantic:content>
 			<VBox>
-				<Panel  class="ui5_awc_trip">
+				<Panel  class="ui5_awc_trip sapUiNoContentPadding">
 					<HBox>
 						<core:Icon src="sap-icon://{tripDetails>/icon}" class="ui5_awc_trip__icon" />
 						<VBox>
@@ -45,29 +45,28 @@
 
 					<awc:TripInformation details="{tripDetails>/plan}" />
 				</Panel>
-
-			<List id="tripsList" items="{trips>/}" class="">
-				<items>
-					<CustomListItem class="ui5-awc__tripsItem" >
-						<core:Icon src="sap-icon://{trips>icon}" />
-						<Text text="{trips>title}" class="ui5-awc__title" width="38%"/>
-						<Text
-							text="{
-								path: 'trips>departureTime0',
-								formatter: '.formatter.dateFormat'
-								}"
-							class="ui5-awc-trip-info__date"/>
-						<Text
-							text=" - "/>
-						<Text
-							text="{
-								path: 'trips>departureTime0',
-								formatter: '.formatter.dateFormat'
-								}"
-							class="ui5-awc-trip-info__date"/>
-					</CustomListItem>
-				</items>
-			</List>
+				<List id="tripsList" items="{trips>/}" class="">
+					<items>
+						<CustomListItem class="ui5-awc__tripsItem" >
+							<core:Icon src="sap-icon://{trips>icon}" />
+							<Text text="{trips>title}" class="ui5-awc__title" width="38%"/>
+							<Text
+								text="{
+									path: 'trips>departureTime0',
+									formatter: '.formatter.dateFormat'
+									}"
+								class="ui5-awc-trip-info__date"/>
+							<Text
+								text=" - "/>
+							<Text
+								text="{
+									path: 'trips>departureTime0',
+									formatter: '.formatter.dateFormat'
+									}"
+								class="ui5-awc-trip-info__date"/>
+						</CustomListItem>
+					</items>
+				</List>
 			</VBox>
 		</semantic:content>
 		<!-- Actions -->
