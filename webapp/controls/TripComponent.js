@@ -202,11 +202,6 @@ sap.ui.define([],
 						 border-bottom: 1px solid;
 					}
 
-					.ui5-awc_trip__appointment {
-						font-weight: bolder;
-						font-size: 1.25rem;
-					}
-
 					.ui5-awc-trip__flight{
 						padding: 0.2rem 0;
 						color: #3f5161;
@@ -294,21 +289,21 @@ sap.ui.define([],
 				p.innerHTML = `
 					<div>
 						<div class="ui5-awc_trip__direction">
-							<div class=ui5-awc-trip__flight">
+							<div class="ui5-awc-trip__flight">
 								<span class="ui5-awc_trip__departure0-time"></span> 
 								<span class="ui5-awc_trip__departure0-port"></span>
 							</div>
-							<div class=ui5-awc-trip__flight">
+							<div class="ui5-awc-trip__flight">
 								<span class="ui5-awc_trip__destination0-time"></span> 
 								<span class="ui5-awc_trip__destination0-port"></span>
 							</div>
 						</div>
 						<div class="ui5-awc_trip__direction" >
-							<div class=ui5-awc-trip__flight">
+							<div class="ui5-awc-trip__flight">
 								<span class="ui5-awc_trip__departure1-time"></span> 
 								<span class="ui5-awc_trip__departure1-port"></span>
 							</div>
-							<div class=ui5-awc-trip__flight">
+							<div class="ui5-awc-trip__flight">
 								<span class="ui5-awc_trip__destination1-time"></span> 
 								<span class="ui5-awc_trip__destination1-port"></span>
 							</div>
@@ -317,6 +312,38 @@ sap.ui.define([],
 				template.appendChild(s);
 				template.appendChild(p);
 				return template;
+			}
+
+			getStyles () {
+				return `
+				<style>
+					:host {
+					}
+					
+					.ui5-awc_trip__direction {
+						 padding: 0.75rem 0;
+						 border-bottom: 1px solid;
+					}
+
+					.ui5-awc-trip__flight{
+						padding: 0.2rem 0;
+						color: #344350;
+					}
+
+					.ui5-awc-trip__flight > span {
+						display: inline-block;
+					}
+
+					span[class$='-time'] {
+						font-weight: bold;
+						color: #ab0202;
+					}
+
+					span[class$='-port'] {
+						width: 38%;
+						max-width: 200px;
+					}
+				</style>`;
 			}
 
 			connectedCallback() {
@@ -368,35 +395,115 @@ sap.ui.define([],
 			get template() {
 				let template = document.createDocumentFragment();
 				let p = document.createElement('div');
+				let s = document.createElement('style');
+				s.innerHTML = this.getStyles();
 				p.innerHTML = `
-					<div class="ui5-awc_trip__direction">
-						<div>
-							<div>
+					<div >
+						<div class="ui5-awc_trip__countdown">
+						03:45
+						</div>
+						<div class="ui5-awc_trip__direction" >
+							<div class="ui5-awc-trip__flight">
 								<span class="ui5-awc_trip__departure0-time"></span> 
 								<span class="ui5-awc_trip__departure0-port"></span>
 								<span class="ui5-awc_trip__departure0-gate"></span>
 							</div>
-							<div>
+							<div class="ui5-awc-trip__flight">
 								<span class="ui5-awc_trip__destination0-time"></span> 
 								<span class="ui5-awc_trip__destination0-port"></span>
 								<span class="ui5-awc_trip__destination0-gate"></span>
 							</div>
 						</div>
-						<div>
-							<div>
+						<div class="ui5-awc_trip__direction" >
+							<div class="ui5-awc-trip__flight">
 								<span class="ui5-awc_trip__departure1-time"></span> 
 								<span class="ui5-awc_trip__departure1-port"></span>
 								<span class="ui5-awc_trip__departure1-gate"></span>
 							</div>
-							<div>
+							<div class="ui5-awc-trip__flight">
 								<span class="ui5-awc_trip__destination1-time"></span> 
 								<span class="ui5-awc_trip__destination1-port"></span>
 								<span class="ui5-awc_trip__destination1-gate"></span>
 							</div>
 						</div>
 					</div>`;
+				template.appendChild(s);
 				template.appendChild(p);
 				return template;
+			}
+
+			getStyles () {
+				return `
+				<style>
+					:host {
+					}
+					
+					.ui5-awc_trip__direction {
+						 padding: 0.75rem 0;
+						 border-bottom: 1px solid;
+					}
+
+					.ui5-awc-trip__flight{
+						padding: 0.2rem 0;
+						color: #344350;
+					}
+
+					.ui5-awc-trip__flight > span {
+						display: inline-block;
+					}
+
+					span[class$='-time'],
+					span[class$='-gate'] {
+						font-weight: bold;
+						color: #ab0202;
+						width: 22%;
+    					text-align: right;
+					}
+
+					span[class$='-port'] {
+						width: 38%;
+						max-width: 200px;
+						padding-left: 0.5rem;
+					}
+					.ui5-awc_trip__countdown {
+						margin: 1rem auto;
+						text-align: center;
+						color: #ab0202;
+						font-size: 2rem;
+						font-weight: bold;
+						width: 40%;
+						border: 1px solid #ab0202;
+						border-radius: 0.2rem;
+						padding: 0.25rem;
+					}
+				</style>`;
+			}
+
+			set departureTime0(val) {
+				this._departureTime0.innerText = new Date(val).toLocaleString("en-US", {
+					hour: "numeric",
+					minute: "numeric"
+				});
+			}
+
+			set departureTime1(val) {
+				this._departureTime1.innerText = new Date(val).toLocaleString("en-US", {
+					hour: "2-digit",
+					minute: "2-digit"
+				});
+			}
+			set destinationTime0(val) {
+				this._destinationTime0.innerText = new Date(val).toLocaleString("en-US", {
+					hour: "2-digit",
+					minute: "2-digit"
+				});
+			}
+
+			set destinationTime1(val) {
+				this._destinationTime1.innerText = new Date(val).toLocaleString("en-US", {
+					hour: "2-digit",
+					minute: "2-digit"
+				});
 			}
 
 			set departureGate0(val) {
