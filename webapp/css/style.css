@@ -63,16 +63,16 @@
 	padding: 0 1rem;
 }
 
-.ui5-awc-trip-info__date {
+.awc-trip-info__date {
 	padding: 0 3px;
 }
 
-.sapMPanel.ui5-awc-trip__panel {
+.sapMPanel.awc-trip__panel {
 	overflow: visible;
 	margin-bottom: 0.75rem;
 }
 
-.sapMPanel.ui5-awc-trip__panel:before {
+.sapMPanel.awc-trip__panel:before {
 	content: '';
 	position: absolute;
 	top: -5px;

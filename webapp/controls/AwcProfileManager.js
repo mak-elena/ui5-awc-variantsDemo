@@ -21,11 +21,7 @@ sap.ui.define([
 				return _profileStoreInstance;
 			},
 
-			initProfile: function() {
-				this.getInstance(); //.changeProfile({"vibration": 1});
-			},
-
-			updateProfile: function(oData) {
+			changeProfile: function(oData) {
 				this.getInstance().changeProfile(oData);
 			}
 		};

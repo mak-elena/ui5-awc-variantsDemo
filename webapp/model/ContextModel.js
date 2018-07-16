@@ -9,11 +9,6 @@ sap.ui.define([
 		_STORAGE_KEY : "UI5_AWC_CONTEXT_MODEL",
 		_storage : jQuery.sap.storage(jQuery.sap.storage.Type.local),
 
-		/**
-		 * Fetches the favorites from local storage and sets up the JSON model
-		 * @param {Object} oSettings a settings object passed to the JSON model
-		 * @return {sap.ui.demo.iconexplorer.model.FavoriteModel} the new model instance
-		 */
 		constructor : function(oInitialData) {
 			// call super constructor
 			JSONModel.apply(this, arguments);
@@ -37,7 +32,6 @@ sap.ui.define([
 
 			// set data
 			this.setData(oData);
-			this.setDefaultBindingMode(sap.ui.model.BindingMode.TwoWay);
 
 			return this;
 		}

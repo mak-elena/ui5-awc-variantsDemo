@@ -2,13 +2,13 @@
 	{
 		"icon": "passenger-train",
 		"title": "UX-DAY",
-		"departureTime0": "Oct 10, 2018",
-		"destinationTime1": "Oct 12, 2018"
+		"depTime0": "Oct 10, 2018",
+		"arrTime1": "Oct 12, 2018"
 	},
 	{
 		"title": "SAP TECHED",
 		"icon": "flight",
-		"departureTime0": "Oct 23, 2018",
-		"destinationTime1": "Oct 25, 2018"
+		"depTime0": "Oct 23, 2018",
+		"arrTime1": "Oct 25, 2018"
 	}
 ]

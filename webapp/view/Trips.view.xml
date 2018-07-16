@@ -39,7 +39,7 @@
 		<!-- Content -->
 		<semantic:content>
 			<VBox>
-				<Panel  class="ui5-awc-trip__panel sapUiNoContentPadding" backgroundDesign="Transparent">
+				<Panel  class="awc-trip__panel sapUiNoContentPadding" backgroundDesign="Transparent">
 					<HBox>
 						<core:Icon src="sap-icon://{tripDetails>/icon}" class="ui5_awc_trip__icon" />
 						<VBox>
@@ -58,18 +58,18 @@
 						<Text text="{trips>title}" class="ui5-awc__title" width="38%"/>
 						<Text
 							text="{
-								path: 'trips>departureTime0',
+								path: 'trips>depTime0',
 								formatter: '.formatter.dateFormat'
 								}"
-							class="ui5-awc-trip-info__date"/>
+							class="awc-trip-info__date"/>
 						<Text
 							text=" - "/>
 						<Text
 							text="{
-								path: 'trips>departureTime0',
+								path: 'trips>depTime0',
 								formatter: '.formatter.dateFormat'
 								}"
-							class="ui5-awc-trip-info__date"/>
+							class="awc-trip-info__date"/>
 					</CustomListItem>
 				</items>
 			</List>

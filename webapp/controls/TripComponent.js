@@ -8,130 +8,24 @@ sap.ui.define([],
 			}
 			static get observedAttributes() {
 				return [
-					'departureTime0',
-					'departureTime1',
-					'destinationTime0',
-					'destinationTime1',
-					'departurePoint0',
-					'departurePoint1',
-					'destinationPoint0',
-					'destinationPoint1',
-					'departureGate0',
-					'departureGate1',
-					'destinationGate0',
-					'destinationGate1'
+					'depTime0',
+					'depTime1',
+					'arrTime0',
+					'arrTime1',
+					'depPoint0',
+					'depPoint1',
+					'arrPoint0',
+					'arrPoint1',
+					'depGate0',
+					'depGate1',
+					'arrGate0',
+					'arrGate1'
 				];
-			}
-
-			// time
-			get departureTime0() {
-				return this.getAttribute('departureTime0');
-			}
-
-			set departureTime0(val) {
-				this.setAttribute('departureTime0', val);
-			}
-
-			get destinationTime0() {
-				return this.getAttribute('destinationTime0');
-			}
-
-			set destinationTime0(val) {
-				this.setAttribute('destinationTime0', val);
-			}
-
-			get departureTime1() {
-				return this.getAttribute('departureTime1');
-			}
-
-			set departureTime1(val) {
-				this.setAttribute('departureTime1', val);
-			}
-
-			get destinationTime1() {
-				return this.getAttribute('destinationTime1');
-			}
-
-			set destinationTime1(val) {
-				this.setAttribute('destinationTime1', val);
-			}
-
-			// points
-			get departurePoint0() {
-				return this.getAttribute('departurePoint0');
-			}
-
-			set departurePoint0(val) {
-				this.setAttribute('departurePoint0', val);
-			}
-
-			get destinationPoint0() {
-				return this.getAttribute('destinationPoint0');
-			}
-
-			set destinationPoint0(val) {
-				this.setAttribute('destinationPoint0', val);
-			}
-
-			get departurePoint1() {
-				return this.getAttribute('departurePoint1');
-			}
-
-			set departurePoint1(val) {
-				this.setAttribute('departurePoint1', val);
-			}
-
-			get departurePoint1() {
-				return this.getAttribute('departurePoint1');
-			}
-
-			set departurePoint1(val) {
-				this.setAttribute('departurePoint1', val);
-			}
-
-			get destinationPoint1() {
-				return this.getAttribute('destinationPoint1');
-			}
-
-			set destinationPoint1(val) {
-				this.setAttribute('destinationPoint1', val);
-			}
-
-			get departureGate0() {
-				return this.getAttribute('departureGate0');
-			}
-
-			set departureGate0(val) {
-				this.setAttribute('departureGate0', val);
-			}
-
-			get destinationGate0() {
-				return this.getAttribute('destinationGate0');
-			}
-
-			set destinationGate0(val) {
-				this.setAttribute('destinationGate0', val);
-			}
-
-			get departureGate1() {
-				return this.getAttribute('departureGate1');
-			}
-
-			set departureGate1(val) {
-				this.setAttribute('departureGate1', val);
-			}
-
-			get destinationGate1() {
-				return this.getAttribute('destinationGate1');
-			}
-
-			set destinationGate1(val) {
-				this.setAttribute('destinationGate1', val);
 			}
 
 			attributeChangedCallback(name, oldValue, newValue) {
 				super.attributeChangedCallback(name, oldValue, newValue);
-				this._update();
+				this._updateAttribute();
 			}
 
 			performAdaptation(profile) {
@@ -142,48 +36,48 @@ sap.ui.define([],
 				this._update();
 			}
 
+			_updateAttribute (sAttribute) {
+				if (this._currentVariant != null) {
+					this._currentVariant[sAttribute] = this.getAttribute(sAttribute);
+				}
+			}
+
 			_update() {
 				if (this._currentVariant != null) {
-					this._currentVariant.departurePoint0 = this.departurePoint0;
-					this._currentVariant.departureGate0 = this.departureGate0;
-					this._currentVariant.departureTime0 = this.departureTime0;
-
-					this._currentVariant.destinationPoint0 = this.destinationPoint0;
-					this._currentVariant.destinationGate0 = this.destinationGate0;
-					this._currentVariant.destinationTime0 = this.destinationTime0;
-
-					this._currentVariant.departurePoint1 = this.departurePoint1;
-					this._currentVariant.departureTime1 = this.departureTime1;
-					this._currentVariant.departureGate1 = this.departureGate1;
-
-					this._currentVariant.destinationPoint1 = this.destinationPoint1;
-					this._currentVariant.destinationTime1 = this.destinationTime1;
-					this._currentVariant.destinationGate1 = this.destinationGate1;
-					}
+					TripInformationComponent.observedAttributes.forEach(
+						x => this._updateAttribute(x)
+					);
+				}
 			}
 		}
 
 		class ShortTripInformationVariant extends awc.AdaptiveVariant {
+			static matches(context) {
+				return context['daysLeft'] > 7;
+			}
+
 			constructor() {
 				super();
 			}
 
 			get template() {
 				let template = document.createDocumentFragment();
+
 				let s = document.createElement('style');
 				s.innerHTML = this.getStyles();
+
 				let p = document.createElement('div');
 				p.innerHTML = `
-					<div class="ui5-awc_trip__direction">
-						<div class="ui5-awc-trip__flight">
-							<span class="ui5-awc_trip__departure0-time"></span> 
-							<span class="ui5-awc_trip__departure0-port"></span> -
-							<span class="ui5-awc_trip__destination0-port"></span>
+					<div class="awc-trip">
+						<div class="awc-trip__flight dep0">
+							<span class="awc-trip__time"></span> 
+							<span class="awc-trip__port dep"></span> -
+							<span class="awc-trip__port arr"></span>
 						</div>
-						<div class="ui5-awc-trip__flight">
-							<span class="ui5-awc_trip__departure1-time"></span> 
-							<span class="ui5-awc_trip__departure1-port"></span> -
-							<span class="ui5-awc_trip__destination1-port"></span>
+						<div class="awc-trip__flight dep1">
+							<span class="awc-trip__time"></span> 
+							<span class="awc-trip__port dep"></span> -
+							<span class="awc-trip__port arr"></span>
 						</div>
 					</div>`;
 				template.appendChild(s);
@@ -193,93 +87,86 @@ sap.ui.define([],
 
 			getStyles() {
 				return `
-				<style>
 					:host {
 					}
 					
-					.ui5-awc_trip__direction {
+					.awc-trip {
 						 padding: 0.75rem 0;
 						 border-bottom: 1px solid;
 					}
 
-					.ui5-awc-trip__flight{
+					.awc-trip__flight {
 						padding: 0.2rem 0;
 						color: #3f5161;
 					}
 
-					.ui5-awc-trip__flight > span {
+					.awc-trip__flight > span {
 						display: inline-block;
 					}
-
-					span[class$='-time'] {
+					
+					.awc-trip__time {
 						font-weight: bold;
 					}
 
-					span[class$='-port'] {
+					.awc-trip__port {
 						width: 38%;
 						max-width: 200px;
-					}
-				</style>`;
-			}
-
-			static matches(context) {
-				return context['daysLeft'] > 7;
+					}`;
 			}
 
 			connectedCallback() {
 				super.connectedCallback();
 
-				this._departureTime0 = this.contentRoot.querySelector("span.ui5-awc_trip__departure0-time");
-				this._departureTime1 = this.contentRoot.querySelector("span.ui5-awc_trip__departure1-time");
-				this._departurePoint0 = this.contentRoot.querySelector("span.ui5-awc_trip__departure0-port");
-				this._departurePoint1 = this.contentRoot.querySelector("span.ui5-awc_trip__departure1-port");
+				this._depTime0 = this.contentRoot.querySelector(".awc-trip__flight.dep0 > .awc-trip__time");
+				this._depPoint0 = this.contentRoot.querySelector(".awc-trip__flight.dep0 > .awc-trip__port.dep");
+				this._arrPoint0 = this.contentRoot.querySelector(".awc-trip__flight.dep0 > .awc-trip__port.arr");
 
-				this._destinationPoint0 = this.contentRoot.querySelector("span.ui5-awc_trip__destination0-port");
-				this._destinationPoint1 = this.contentRoot.querySelector("span.ui5-awc_trip__destination1-port");
+				this._depTime1 = this.contentRoot.querySelector(".awc-trip__flight.dep1 > .awc-trip__time");
+				this._depPoint1 = this.contentRoot.querySelector(".awc-trip__flight.dep1 > .awc-trip__port.dep");
+				this._arrPoint1 = this.contentRoot.querySelector(".awc-trip__flight.dep1 > .awc-trip__port.arr");
 			}
 
-			set departureTime0(val) {
-				this._departureTime0.innerText = new Date(val).toLocaleString("en-US", {
+			formatDate (oValue) {
+				return new Date(oValue).toLocaleString("en-US", {
 					year: "2-digit",
 					month: "2-digit",
 					day: "2-digit"
 				});
 			}
 
-			set departureTime1(val) {
-				this._departureTime1.innerText = new Date(val).toLocaleString("en-US", {
-					year: "2-digit",
-					month: "2-digit",
-					day: "2-digit"
-				});
+			set depTime0(val) {
+				this._depTime0.innerText = this.formatDate(val);
 			}
 
-			set departurePoint0(val) {
-				this._departurePoint0.innerText = val;
+			set depTime1(val) {
+				this._depTime1.innerText = this.formatDate(val);
 			}
 
-			set departurePoint1(val) {
-				this._departurePoint1.innerText = val;
+			set depPoint0(val) {
+				this._depPoint0.innerText = val;
 			}
 
-			set destinationPoint0(val) {
-				this._destinationPoint0.innerText = val;
+			set depPoint1(val) {
+				this._depPoint1.innerText = val;
 			}
 
-			set destinationPoint1(val) {
-				this._destinationPoint1.innerText = val;
+			set arrPoint0(val) {
+				this._arrPoint0.innerText = val;
+			}
+
+			set arrPoint1(val) {
+				this._arrPoint1.innerText = val;
 			}
 		}
 
 		class MidTripInformationVariant extends ShortTripInformationVariant {
-			constructor() {
-				super();
-			}
-
 			static matches(context) {
 				return context['daysLeft'] > 1 && context['daysLeft'] <= 7;
 			}
 
+			constructor() {
+				super();
+			}
 
 			get template() {
 				let template = document.createDocumentFragment();
@@ -288,24 +175,24 @@ sap.ui.define([],
 				let p = document.createElement('div');
 				p.innerHTML = `
 					<div>
-						<div class="ui5-awc_trip__direction">
-							<div class="ui5-awc-trip__flight">
-								<span class="ui5-awc_trip__departure0-time"></span> 
-								<span class="ui5-awc_trip__departure0-port"></span>
+						<div class="awc-trip">
+							<div class="awc-trip__flight dep0">
+								<span class="awc-trip__time"></span> 
+								<span class="awc-trip__port"></span>
 							</div>
-							<div class="ui5-awc-trip__flight">
-								<span class="ui5-awc_trip__destination0-time"></span> 
-								<span class="ui5-awc_trip__destination0-port"></span>
+							<div class="awc-trip__flight arr0">
+								<span class="awc-trip__time"></span> 
+								<span class="awc-trip__port"></span>
 							</div>
 						</div>
-						<div class="ui5-awc_trip__direction" >
-							<div class="ui5-awc-trip__flight">
-								<span class="ui5-awc_trip__departure1-time"></span> 
-								<span class="ui5-awc_trip__departure1-port"></span>
+						<div class="awc-trip" >
+							<div class="awc-trip__flight dep1">
+								<span class="awc-trip__time"></span> 
+								<span class="awc-trip__port"></span>
 							</div>
-							<div class="ui5-awc-trip__flight">
-								<span class="ui5-awc_trip__destination1-time"></span> 
-								<span class="ui5-awc_trip__destination1-port"></span>
+							<div class="awc-trip__flight arr1">
+								<span class="awc-trip__time"></span> 
+								<span class="awc-trip__port"></span>
 							</div>
 						</div>
 					</div>`;
@@ -315,66 +202,47 @@ sap.ui.define([],
 			}
 
 			getStyles () {
-				return `
-				<style>
-					:host {
-					}
-					
-					.ui5-awc_trip__direction {
-						 padding: 0.75rem 0;
-						 border-bottom: 1px solid;
-					}
-
-					.ui5-awc-trip__flight{
-						padding: 0.2rem 0;
-						color: #344350;
-					}
-
-					.ui5-awc-trip__flight > span {
-						display: inline-block;
-					}
-
-					span[class$='-time'] {
+				return super.getStyles() +
+					`.awc-trip__time {
 						font-weight: bold;
 						color: #ab0202;
-					}
-
-					span[class$='-port'] {
-						width: 38%;
-						max-width: 200px;
-					}
-				</style>`;
+					}`;
 			}
 
 			connectedCallback() {
 				super.connectedCallback();
 
-				this._departureTime0 = this.contentRoot.querySelector("span.ui5-awc_trip__departure0-time");
-				this._departureTime1 = this.contentRoot.querySelector("span.ui5-awc_trip__departure1-time");
-				this._destinationTime0 = this.contentRoot.querySelector("span.ui5-awc_trip__destination0-time");
-				this._destinationTime1 = this.contentRoot.querySelector("span.ui5-awc_trip__destination1-time");
+				this._arrTime0 = this.contentRoot.querySelector(".awc-trip__flight.arr0 > .awc-trip__time");
+				this._depPoint0 = this.contentRoot.querySelector(".awc-trip__flight.dep0 > .awc-trip__port");
+				this._arrPoint0 = this.contentRoot.querySelector(".awc-trip__flight.arr0 > .awc-trip__port");
+
+				this._arrTime1 = this.contentRoot.querySelector(".awc-trip__flight.arr1 > .awc-trip__time");
+				this._depPoint1 = this.contentRoot.querySelector(".awc-trip__flight.dep1 > .awc-trip__port");
+				this._arrPoint1 = this.contentRoot.querySelector(".awc-trip__flight.arr1 > .awc-trip__port");
 				}
 
-
-
-			set departureTime0(val) {
-				this._departureTime0.innerText = val;
+			set depTime0(val) {
+				this._depTime0.innerText = val;
 			}
 
-			set departureTime1(val) {
-				this._departureTime1.innerText = val;
+			set depTime1(val) {
+				this._depTime1.innerText = val;
 			}
 
-			set destinationTime0(val) {
-				this._destinationTime0.innerText = val;
+			set arrTime0(val) {
+				this._arrTime0.innerText = val;
 			}
 
-			set destinationTime1(val) {
-				this._destinationTime1.innerText = val;
+			set arrTime1(val) {
+				this._arrTime1.innerText = val;
 			}
 		}
 
 		class FullTripInformationVariant extends MidTripInformationVariant {
+			static matches(context) {
+				return context['daysLeft'] <= 1;
+			}
+
 			constructor() {
 				super();
 			}
@@ -382,14 +250,10 @@ sap.ui.define([],
 			connectedCallback() {
 				super.connectedCallback();
 
-				this._departureGate0 = this.contentRoot.querySelector("span.ui5-awc_trip__departure0-gate");
-				this._destinationGate0 = this.contentRoot.querySelector("span.ui5-awc_trip__destination0-gate");
-				this._departureGate1 = this.contentRoot.querySelector("span.ui5-awc_trip__departure1-gate");
-				this._destinationGate1 = this.contentRoot.querySelector("span.ui5-awc_trip__destination1-gate");
-				}
-
-			static matches(context) {
-				return context['daysLeft'] <= 1;
+				this._depGate0 = this.contentRoot.querySelector(".awc-trip__flight.dep0 > .awc-trip__gate");
+				this._arrGate0 = this.contentRoot.querySelector(".awc-trip__flight.arr0 > .awc-trip__gate");
+				this._depGate1 = this.contentRoot.querySelector(".awc-trip__flight.dep1 > .awc-trip__gate");
+				this._arrGate1 = this.contentRoot.querySelector(".awc-trip__flight.arr1 > .awc-trip__gate");
 			}
 
 			get template() {
@@ -399,31 +263,31 @@ sap.ui.define([],
 				s.innerHTML = this.getStyles();
 				p.innerHTML = `
 					<div >
-						<div class="ui5-awc_trip__countdown">
+						<div class="awc-trip__countdown">
 						03:45
 						</div>
-						<div class="ui5-awc_trip__direction" >
-							<div class="ui5-awc-trip__flight">
-								<span class="ui5-awc_trip__departure0-time"></span> 
-								<span class="ui5-awc_trip__departure0-port"></span>
-								<span class="ui5-awc_trip__departure0-gate"></span>
+						<div class="awc-trip" >
+							<div class="awc-trip__flight dep0">
+								<span class="awc-trip__time"></span> 
+								<span class="awc-trip__port"></span>
+								<span class="awc-trip__gate"></span>
 							</div>
-							<div class="ui5-awc-trip__flight">
-								<span class="ui5-awc_trip__destination0-time"></span> 
-								<span class="ui5-awc_trip__destination0-port"></span>
-								<span class="ui5-awc_trip__destination0-gate"></span>
+							<div class="awc-trip__flight arr0">
+								<span class="awc-trip__time"></span> 
+								<span class="awc-trip__port"></span>
+								<span class="awc-trip__gate"></span>
 							</div>
 						</div>
-						<div class="ui5-awc_trip__direction" >
-							<div class="ui5-awc-trip__flight">
-								<span class="ui5-awc_trip__departure1-time"></span> 
-								<span class="ui5-awc_trip__departure1-port"></span>
-								<span class="ui5-awc_trip__departure1-gate"></span>
+						<div class="awc-trip" >
+							<div class="awc-trip__flight dep1">
+								<span class="awc-trip__time"></span> 
+								<span class="awc-trip__port"></span>
+								<span class="awc-trip__gate"></span>
 							</div>
-							<div class="ui5-awc-trip__flight">
-								<span class="ui5-awc_trip__destination1-time"></span> 
-								<span class="ui5-awc_trip__destination1-port"></span>
-								<span class="ui5-awc_trip__destination1-gate"></span>
+							<div class="awc-trip__flight arr1">
+								<span class="awc-trip__time"></span> 
+								<span class="awc-trip__port"></span>
+								<span class="awc-trip__gate"></span>
 							</div>
 						</div>
 					</div>`;
@@ -433,39 +297,20 @@ sap.ui.define([],
 			}
 
 			getStyles () {
-				return `
-				<style>
-					:host {
-					}
-					
-					.ui5-awc_trip__direction {
-						 padding: 0.75rem 0;
-						 border-bottom: 1px solid;
+				return super.getStyles() +
+					`.awc-trip__port {
+						padding-left: 0.5rem;
 					}
 
-					.ui5-awc-trip__flight{
-						padding: 0.2rem 0;
-						color: #344350;
-					}
-
-					.ui5-awc-trip__flight > span {
-						display: inline-block;
-					}
-
-					span[class$='-time'],
-					span[class$='-gate'] {
+					.awc-trip__time,
+					.awc-trip__gate {
 						font-weight: bold;
 						color: #ab0202;
 						width: 22%;
     					text-align: right;
 					}
 
-					span[class$='-port'] {
-						width: 38%;
-						max-width: 200px;
-						padding-left: 0.5rem;
-					}
-					.ui5-awc_trip__countdown {
+					.awc-trip__countdown {
 						margin: 1rem auto;
 						text-align: center;
 						color: #ab0202;
@@ -475,59 +320,54 @@ sap.ui.define([],
 						border: 1px solid #ab0202;
 						border-radius: 0.2rem;
 						padding: 0.25rem;
-					}
-				</style>`;
+					}`;
 			}
 
-			set departureTime0(val) {
-				this._departureTime0.innerText = new Date(val).toLocaleString("en-US", {
+			formatDate (oValue) {
+				return new Date(oValue).toLocaleString("en-US", {
 					hour: "numeric",
 					minute: "numeric"
 				});
 			}
 
-			set departureTime1(val) {
-				this._departureTime1.innerText = new Date(val).toLocaleString("en-US", {
-					hour: "2-digit",
-					minute: "2-digit"
-				});
-			}
-			set destinationTime0(val) {
-				this._destinationTime0.innerText = new Date(val).toLocaleString("en-US", {
-					hour: "2-digit",
-					minute: "2-digit"
-				});
+			set depTime0(val) {
+				this._depTime0.innerText = this.formatDate(val);
 			}
 
-			set destinationTime1(val) {
-				this._destinationTime1.innerText = new Date(val).toLocaleString("en-US", {
-					hour: "2-digit",
-					minute: "2-digit"
-				});
+			set depTime1(val) {
+				this._depTime1.innerText = this.formatDate(val);
 			}
 
-			set departureGate0(val) {
-				this._departureGate0.innerText = val;
+			set arrTime0(val) {
+				this._arrTime0.innerText = this.formatDate(val);
 			}
 
-			set departureGate1(val) {
-				this._departureGate1.innerText = val;
+			set arrTime1(val) {
+				this._arrTime1.innerText = this.formatDate(val);
 			}
 
-			set destinationGate0(val) {
-				this._destinationGate0.innerText = val;
+			set depGate0(val) {
+				this._depGate0.innerText = val;
 			}
 
-			set destinationGate1(val) {
-				this._destinationGate1.innerText = val;
+			set depGate1(val) {
+				this._depGate1.innerText = val;
 			}
 
-			set destinationPoint0(val) {
-				this._destinationPoint0.innerText = val;
+			set arrGate0(val) {
+				this._arrGate0.innerText = val;
 			}
 
-			set departurePoint1(val) {
-				this._departurePoint1.innerText = val;
+			set arrGate1(val) {
+				this._arrGate1.innerText = val;
+			}
+
+			set arrPoint0(val) {
+				this._arrPoint0.innerText = val;
+			}
+
+			set depPoint1(val) {
+				this._depPoint1.innerText = val;
 			}
 		}
 

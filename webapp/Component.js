@@ -77,7 +77,7 @@ sap.ui.define([
 
 			updateContextProfile: function () {
 				var oContextModel = this.getModel("context");
-				AwcProfileStore.updateProfile(oContextModel.getData());
+				AwcProfileStore.changeProfile(oContextModel.getData());
 			},
 
 			_initContextModel: function () {

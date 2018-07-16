@@ -25,7 +25,7 @@ sap.ui.define([
 
 			onDateChanged: function(oEvent) {
 				var oDaysLeft = oEvent.getParameter("item").getKey();
-				AwcProfileStore.updateProfile({"daysLeft": oDaysLeft});
+				AwcProfileStore.changeProfile({"daysLeft": oDaysLeft});
 			},
 
 			/* =========================================================== */
@@ -39,12 +39,6 @@ sap.ui.define([
 			 * @private
 			 */
 			_onObjectMatched : function (oEvent) {
-			},
-
-			_getTripDate: function() {
-				var oTripDetails = this.getOwnerComponent().getModel("tripDetails");
-				var oTripDate = oTripDetails.getProperty("/beginDate");
-				return new Date(oTripDate);
 			}
 
 		});
