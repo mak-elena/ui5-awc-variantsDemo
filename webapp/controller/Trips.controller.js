@@ -24,8 +24,6 @@ sap.ui.define([
 			/* =========================================================== */
 
 			onDateChanged: function(oEvent) {
-				var oDaysLeft = oEvent.getParameter("item").getKey();
-				AwcProfileStore.changeProfile({"daysLeft": oDaysLeft});
 			},
 
 			/* =========================================================== */
