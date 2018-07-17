@@ -201,6 +201,11 @@ sap.ui.define([],
 				return template;
 			}
 
+			formatDate (oValue) {
+				// Full date
+				return oValue;
+			}
+
 			getStyles () {
 				return super.getStyles() +
 					`.awc-trip__time {
@@ -221,20 +226,12 @@ sap.ui.define([],
 				this._arrPoint1 = this.contentRoot.querySelector(".awc-trip__flight.arr1 > .awc-trip__port");
 				}
 
-			set depTime0(val) {
-				this._depTime0.innerText = val;
-			}
-
-			set depTime1(val) {
-				this._depTime1.innerText = val;
-			}
-
 			set arrTime0(val) {
-				this._arrTime0.innerText = val;
+				this._arrTime0.innerText = this.formatDate(val);
 			}
 
 			set arrTime1(val) {
-				this._arrTime1.innerText = val;
+				this._arrTime1.innerText = this.formatDate(val);
 			}
 		}
 
@@ -245,15 +242,6 @@ sap.ui.define([],
 
 			constructor() {
 				super();
-			}
-
-			connectedCallback() {
-				super.connectedCallback();
-
-				this._depGate0 = this.contentRoot.querySelector(".awc-trip__flight.dep0 > .awc-trip__gate");
-				this._arrGate0 = this.contentRoot.querySelector(".awc-trip__flight.arr0 > .awc-trip__gate");
-				this._depGate1 = this.contentRoot.querySelector(".awc-trip__flight.dep1 > .awc-trip__gate");
-				this._arrGate1 = this.contentRoot.querySelector(".awc-trip__flight.arr1 > .awc-trip__gate");
 			}
 
 			get template() {
@@ -323,27 +311,20 @@ sap.ui.define([],
 					}`;
 			}
 
+			connectedCallback() {
+				super.connectedCallback();
+
+				this._depGate0 = this.contentRoot.querySelector(".awc-trip__flight.dep0 > .awc-trip__gate");
+				this._arrGate0 = this.contentRoot.querySelector(".awc-trip__flight.arr0 > .awc-trip__gate");
+				this._depGate1 = this.contentRoot.querySelector(".awc-trip__flight.dep1 > .awc-trip__gate");
+				this._arrGate1 = this.contentRoot.querySelector(".awc-trip__flight.arr1 > .awc-trip__gate");
+			}
+
 			formatDate (oValue) {
 				return new Date(oValue).toLocaleString("en-US", {
 					hour: "numeric",
 					minute: "numeric"
 				});
-			}
-
-			set depTime0(val) {
-				this._depTime0.innerText = this.formatDate(val);
-			}
-
-			set depTime1(val) {
-				this._depTime1.innerText = this.formatDate(val);
-			}
-
-			set arrTime0(val) {
-				this._arrTime0.innerText = this.formatDate(val);
-			}
-
-			set arrTime1(val) {
-				this._arrTime1.innerText = this.formatDate(val);
 			}
 
 			set depGate0(val) {
@@ -360,14 +341,6 @@ sap.ui.define([],
 
 			set arrGate1(val) {
 				this._arrGate1.innerText = val;
-			}
-
-			set arrPoint0(val) {
-				this._arrPoint0.innerText = val;
-			}
-
-			set depPoint1(val) {
-				this._depPoint1.innerText = val;
 			}
 		}
 
