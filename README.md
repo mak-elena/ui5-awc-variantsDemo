@@ -1,7 +1,9 @@
 
 [![Build Status](https://travis-ci.org/mak-elena/ui5-awc-variantsDemo.svg?branch=master)](https://travis-ci.org/mak-elena/ui5-awc-variantsDemo)
 
-# Adaptive Variants Demo
+[OSCON 2018](https://conferences.oreilly.com/oscon/oscon-or) - Adaptive Web Components: Context matters!
+
+## Adaptive Variants Demo
 
 **[Launch Demo](https://mak-elena.github.io/ui5-awc-variantsDemo/)**
 
@@ -11,7 +13,7 @@ Built with
 * [Generic Sensor API](https://www.w3.org/TR/generic-sensor/)
 
 
-# Description
+## Description
 
 Demonstrates usage of [Adaptive Variants](https://github.com/FraunhoferIAO/awc-core/blob/master/doc/API.md#adaptivevariant) within a UI5 app.
 
@@ -20,7 +22,7 @@ Different details of a trip are shown depending on how many days left till the t
 * 1-7 days: more detailed information
 * Day of the trip: Full information (including gates)
 
-## How to install
+### How to install
 
  * Clone the repository.
  * Ensure `nodejs` and `npm` are installed (see [node.js](http://nodejs.org/))
