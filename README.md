@@ -2,9 +2,9 @@
 [![Build Status](https://travis-ci.org/mak-elena/ui5-awc-variantsDemo.svg?branch=master)](https://travis-ci.org/mak-elena/ui5-awc-variantsDemo)
 
 # [OSCON 2018](https://conferences.oreilly.com/oscon/oscon-or) - Adaptive Web Components: Context matters!
-````
+
 See also [Shake Demo](https://github.com/mak-elena/ui5-awc-shakeDemo)
-````
+
 
 ## Adaptive User Interface Demo
 **Showcase**: The less time is left till the next trip, the more detailed information about the trip is shown. Time is considered as an extended context factor. 
