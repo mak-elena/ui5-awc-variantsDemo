@@ -7,7 +7,16 @@ See also [Shake Demo](https://github.com/mak-elena/ui5-awc-shakeDemo)
 
 
 ## Adaptive User Interface Demo
-**Showcase**: The less time is left till the next trip, the more detailed information about the trip is shown. Time is considered as an extended context factor. 
+
+### Story
+I’m usually getting nervous when travelling. I'm worrying about everything and checking the flight plan every few minutes...
+
+How it might be helped? How can I staxy relaxed?
+
+What i need is ... just right information to the right moment ... with NO EXTRA CLICKS!
+
+### Showcase
+The less time is left till the next trip, the more detailed information about the trip is shown. Time is considered as an extended context factor. 
 
 Demonstrates how [Adaptive components](https://github.com/FraunhoferIAO/awc-core/blob/master/doc/API.md#adaptivecomponent) can be applied to adapt UI to the context and to improve User Experience.
 
