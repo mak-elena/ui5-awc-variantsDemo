@@ -11,7 +11,7 @@ See also [Shake Demo](https://github.com/mak-elena/ui5-awc-shakeDemo)
 ### Story
 I’m usually getting nervous when travelling. I'm worrying about everything and checking the flight plan every few minutes...
 
-How it might be helped? How can I staxy relaxed?
+How it might be helped? How can I stay relaxed?
 
 What i need is ... just right information to the right moment ... with NO EXTRA CLICKS!
 
