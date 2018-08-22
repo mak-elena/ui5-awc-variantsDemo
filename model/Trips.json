@@ -1,0 +1,14 @@
+[
+	{
+		"icon": "passenger-train",
+		"title": "UX-DAY",
+		"depTime0": "Oct 10, 2018",
+		"arrTime1": "Oct 12, 2018"
+	},
+	{
+		"title": "SAP TECHED",
+		"icon": "flight",
+		"depTime0": "Oct 23, 2018",
+		"arrTime1": "Oct 25, 2018"
+	}
+]

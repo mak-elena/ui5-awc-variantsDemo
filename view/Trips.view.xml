@@ -1,0 +1,79 @@
+<mvc:View
+	controllerName="ui5.awc.demo.controller.Trips"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:semantic="sap.f.semantic"
+	xmlns:awc="ui5.awc">
+
+	<semantic:SemanticPage
+		id="mySemanticPage"
+		headerPinnable="true"
+		headerExpanded="true"
+		toggleHeaderOnTitleClick="true"
+		preserveHeaderStateOnScroll="false"
+		showFooter="true"
+		class="custom-page">
+
+		<!-- Title Heading-->
+		<semantic:titleHeading>
+			<Title text="{i18n>uiStructureExampleName}"/>
+		</semantic:titleHeading>
+		<semantic:headerContent>
+			<Title text="{i18n>timeBeforeTripText}" />
+			<SegmentedButton
+				selectedKey="30" width="100%"
+				selectionChange="onDateChanged">
+			<items>
+				<SegmentedButtonItem text="{i18n>oneMonthText}" key="30" />
+				<SegmentedButtonItem text="{i18n>oneWeekText}" key="7" />
+				<SegmentedButtonItem text="{i18n>tripDayText}" key="1" />
+			</items>
+			</SegmentedButton>
+		</semantic:headerContent>
+
+		<!-- Content -->
+		<semantic:content>
+			<VBox>
+				<Panel  class="awc-trip__panel sapUiNoContentPadding" backgroundDesign="Transparent">
+					<HBox>
+						<core:Icon src="sap-icon://{tripDetails>/icon}" class="ui5_awc_trip__icon" />
+						<VBox>
+							<Text text="{tripDetails>/title}" class="ui5_awc_trip__title"/>
+							<Text text="{tripDetails>/beginDate} - {tripDetails>/endDate}"  class="ui5_awc_trip__dates" />
+						</VBox>
+					</HBox>
+
+					<awc:TripInformation details="{tripDetails>/plan}" />
+				</Panel>
+
+			<List id="tripsList" items="{trips>/}" class="">
+				<items>
+					<CustomListItem class="ui5-awc__tripsItem" >
+						<core:Icon src="sap-icon://{trips>icon}" />
+						<Text text="{trips>title}" class="ui5-awc__title" width="38%"/>
+						<Text
+							text="{
+								path: 'trips>depTime0',
+								formatter: '.formatter.dateFormat'
+								}"
+							class="awc-trip-info__date"/>
+						<Text
+							text=" - "/>
+						<Text
+							text="{
+								path: 'trips>depTime0',
+								formatter: '.formatter.dateFormat'
+								}"
+							class="awc-trip-info__date"/>
+					</CustomListItem>
+				</items>
+			</List>
+			</VBox>
+		</semantic:content>
+		<!-- Actions -->
+		<semantic:footerCustomActions>
+			<Button icon="sap-icon://add" class="ui5-awc-panel__order-button" />
+		</semantic:footerCustomActions>
+	</semantic:SemanticPage>
+</mvc:View>
